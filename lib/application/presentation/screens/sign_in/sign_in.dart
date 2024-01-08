@@ -29,7 +29,7 @@ class ScreenSignIn extends StatelessWidget {
                 kHeight100,
                 CustomTextFormFieldWidget(label: 'Email',),
                 kHeight30,
-                CustomTextFormFieldWidget(label: 'Password',),
+                const CustomTextFormFieldWidget(label: 'Password',),
                 kHeight30,
                 Align(
                   alignment: Alignment.centerRight,
