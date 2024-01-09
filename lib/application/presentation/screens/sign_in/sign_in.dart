@@ -14,7 +14,7 @@ class ScreenSignIn extends StatelessWidget {
       backgroundColor: kBlack,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(25.0),
+          padding: const EdgeInsets.all(25.0),
           child: SizedBox(
             height: height,
             child: Form(
@@ -27,7 +27,7 @@ class ScreenSignIn extends StatelessWidget {
                   style: TextStyle(fontSize: 30.0, color: kWhite),
                 ),
                 kHeight100,
-                CustomTextFormFieldWidget(label: 'Email',),
+                const CustomTextFormFieldWidget(label: 'Email',),
                 kHeight30,
                 const CustomTextFormFieldWidget(label: 'Password',),
                 kHeight30,
@@ -35,7 +35,6 @@ class ScreenSignIn extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: const Text("Sign In"),
                     style: ElevatedButton.styleFrom(
                       side: const BorderSide(color: kWhite),
                       fixedSize: Size(sWidth * 0.30, sWidth * 0.10),
@@ -44,6 +43,7 @@ class ScreenSignIn extends StatelessWidget {
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(kRadius5)),
                     ),
+                    child: const Text("Sign In"),
                   ),
                 )
               ],
