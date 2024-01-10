@@ -5,10 +5,10 @@ class ScreenAddSneakers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Text("add sneakers"),      
-      ) ,
+        title: Text("add sneakers"),
+      ),
       body: Center(
         child: Text("add sneakers"),
       ),

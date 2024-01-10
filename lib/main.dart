@@ -4,11 +4,11 @@ import 'package:kicks_sneakerapp/application/presentation/screens/sign_in/sign_i
 import 'package:kicks_sneakerapp/application/presentation/screens/splash_screen/splash_screen.dart';
 
 void main() {
-  runApp( const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-   const MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:   ScreenSplash(),
+      home: ScreenSplash(),
     );
   }
 }
-
-
-

@@ -3,12 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_floating_bottom_bar/flutter_floating_bottom_bar.dart';
 import 'package:icons_plus/icons_plus.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/add_sneakers/add_sneakers.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/all_users/all_users.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/home/home_screen.dart';
-import 'package:kicks_sneakerapp/application/presentation/screens/sign_in/sign_in.dart';
-import 'package:kicks_sneakerapp/application/presentation/screens/splash_screen/splash_screen.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/tabview/tabview.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
@@ -57,20 +54,41 @@ class _ScreenBottombarState extends State<ScreenBottombar>
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor:kWhite,systemNavigationBarColor: kWhite),
-            title: const Text("Kicks",
-            style: TextStyle(fontWeight: FontWeight.bold),),
+            systemOverlayStyle: const SystemUiOverlayStyle(
+                statusBarColor: kWhite, systemNavigationBarColor: kWhite),
+            title: const Text(
+              "Kicks",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
             centerTitle: true,
             actions: [
-              IconButton(
-                onPressed: () {},
-                 icon: const Icon(EvaIcons.shopping_cart))
+              Stack(
+                children: [
+                  CircleAvatar(
+                    backgroundColor: kGrey,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(EvaIcons.shopping_cart_outline),
+                    ),
+                  ),
+                  const Positioned(
+                    top: 0,
+                    right: 0,
+                    child: Icon(
+                      Icons.circle,
+                      size: 15,
+                      color: kBlack,
+                    ),
+                  ),
+                ],
+              ),
+              kWidth10
             ],
           ),
           body: BottomBar(
             borderRadius: BorderRadius.circular(500),
             body: (context, controller) => Padding(
-              padding:  EdgeInsets.fromLTRB(20, 5, 20, 0),
+              padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
               child: TabBarView(
                   controller: tabController,
                   dragStartBehavior: DragStartBehavior.down,
@@ -117,7 +135,9 @@ class _ScreenBottombarState extends State<ScreenBottombar>
                     icon: currentPage == 3
                         ? const CircleAvatar(
                             backgroundColor: kWhite,
-                            child: Icon(FontAwesome.user,),
+                            child: Icon(
+                              FontAwesome.user,
+                            ),
                           )
                         : const Icon(FontAwesome.user),
                   )

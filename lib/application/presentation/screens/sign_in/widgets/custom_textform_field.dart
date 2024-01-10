@@ -5,7 +5,7 @@ import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
 class CustomTextFormFieldWidget extends StatelessWidget {
   final String label;
   const CustomTextFormFieldWidget({
-    super.key, 
+    super.key,
     required this.label,
   });
 
@@ -14,7 +14,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         Text(
+        Text(
           label,
           style: const TextStyle(color: kWhite),
         ),

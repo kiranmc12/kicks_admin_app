@@ -5,10 +5,10 @@ class ScreenUsers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        title: Text("Users"),      
-      ) ,
+        title: Text("Users"),
+      ),
       body: Center(
         child: Text("Users"),
       ),
