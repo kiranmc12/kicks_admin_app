@@ -46,6 +46,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       });
     });
     on<_SignOut>((event, emit) => SharedPref.removeLogin());
+    on<_Obscure>(
+        (event, emit) => emit(state.copyWith(obscure: !state.obscure)));
+
     on<_LoggedIn>((event, emit) async {
       final login = await SharedPref.getLogin();
       emit(state.copyWith(isLoggedIn: login));

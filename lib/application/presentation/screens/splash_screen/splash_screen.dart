@@ -1,7 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:kicks_sneakerapp/application/presentation/screens/sign_in/sign_in.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kicks_sneakerapp/application/bussiness_logic/bloc/auth_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
+
+import '../../routes/routes.dart';
 
 class ScreenSplash extends StatelessWidget {
   const ScreenSplash({super.key});
@@ -9,23 +14,27 @@ class ScreenSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     sizeFinder(context);
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) =>
-              const ScreenSignIn(), // Replace with your target screen
-        ),
-      );
+    Timer(const Duration(seconds: 3), () {
+      context.read<AuthBloc>().add(const AuthEvent.loggedIn());
     });
-    return const Scaffold(
+
+    return Scaffold(
       backgroundColor: kBlack,
-      body: Center(
-        child: Text(
-          "Kicks",
-          style: TextStyle(
-            color: kWhite,
-            fontSize: 35.0,
+      body: BlocListener<AuthBloc, AuthState>(
+        listener: (context, state) {
+          if (state.isLoggedIn) {
+            Navigator.popAndPushNamed(context, Routes.bottomNav);
+          } else {
+            Navigator.popAndPushNamed(context, Routes.signInPage);
+          }
+        },
+        child: const Center(
+          child: Text(
+            "Kicks",
+            style: TextStyle(
+              color: kWhite,
+              fontSize: 35.0,
+            ),
           ),
         ),
       ),

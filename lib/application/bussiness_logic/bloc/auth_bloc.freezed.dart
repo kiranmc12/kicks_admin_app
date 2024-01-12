@@ -20,6 +20,7 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(LoginModel loginModel) signIn,
     required TResult Function() signOut,
+    required TResult Function() obscure,
     required TResult Function() loggedIn,
   }) =>
       throw _privateConstructorUsedError;
@@ -27,6 +28,7 @@ mixin _$AuthEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginModel loginModel)? signIn,
     TResult? Function()? signOut,
+    TResult? Function()? obscure,
     TResult? Function()? loggedIn,
   }) =>
       throw _privateConstructorUsedError;
@@ -34,6 +36,7 @@ mixin _$AuthEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginModel loginModel)? signIn,
     TResult Function()? signOut,
+    TResult Function()? obscure,
     TResult Function()? loggedIn,
     required TResult orElse(),
   }) =>
@@ -42,6 +45,7 @@ mixin _$AuthEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignIn value) signIn,
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_Obscure value) obscure,
     required TResult Function(_LoggedIn value) loggedIn,
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +53,7 @@ mixin _$AuthEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignIn value)? signIn,
     TResult? Function(_SignOut value)? signOut,
+    TResult? Function(_Obscure value)? obscure,
     TResult? Function(_LoggedIn value)? loggedIn,
   }) =>
       throw _privateConstructorUsedError;
@@ -56,6 +61,7 @@ mixin _$AuthEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignIn value)? signIn,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_Obscure value)? obscure,
     TResult Function(_LoggedIn value)? loggedIn,
     required TResult orElse(),
   }) =>
@@ -154,6 +160,7 @@ class _$SignInImpl with DiagnosticableTreeMixin implements _SignIn {
   TResult when<TResult extends Object?>({
     required TResult Function(LoginModel loginModel) signIn,
     required TResult Function() signOut,
+    required TResult Function() obscure,
     required TResult Function() loggedIn,
   }) {
     return signIn(loginModel);
@@ -164,6 +171,7 @@ class _$SignInImpl with DiagnosticableTreeMixin implements _SignIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginModel loginModel)? signIn,
     TResult? Function()? signOut,
+    TResult? Function()? obscure,
     TResult? Function()? loggedIn,
   }) {
     return signIn?.call(loginModel);
@@ -174,6 +182,7 @@ class _$SignInImpl with DiagnosticableTreeMixin implements _SignIn {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginModel loginModel)? signIn,
     TResult Function()? signOut,
+    TResult Function()? obscure,
     TResult Function()? loggedIn,
     required TResult orElse(),
   }) {
@@ -188,6 +197,7 @@ class _$SignInImpl with DiagnosticableTreeMixin implements _SignIn {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignIn value) signIn,
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_Obscure value) obscure,
     required TResult Function(_LoggedIn value) loggedIn,
   }) {
     return signIn(this);
@@ -198,6 +208,7 @@ class _$SignInImpl with DiagnosticableTreeMixin implements _SignIn {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignIn value)? signIn,
     TResult? Function(_SignOut value)? signOut,
+    TResult? Function(_Obscure value)? obscure,
     TResult? Function(_LoggedIn value)? loggedIn,
   }) {
     return signIn?.call(this);
@@ -208,6 +219,7 @@ class _$SignInImpl with DiagnosticableTreeMixin implements _SignIn {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignIn value)? signIn,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_Obscure value)? obscure,
     TResult Function(_LoggedIn value)? loggedIn,
     required TResult orElse(),
   }) {
@@ -273,6 +285,7 @@ class _$SignOutImpl with DiagnosticableTreeMixin implements _SignOut {
   TResult when<TResult extends Object?>({
     required TResult Function(LoginModel loginModel) signIn,
     required TResult Function() signOut,
+    required TResult Function() obscure,
     required TResult Function() loggedIn,
   }) {
     return signOut();
@@ -283,6 +296,7 @@ class _$SignOutImpl with DiagnosticableTreeMixin implements _SignOut {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginModel loginModel)? signIn,
     TResult? Function()? signOut,
+    TResult? Function()? obscure,
     TResult? Function()? loggedIn,
   }) {
     return signOut?.call();
@@ -293,6 +307,7 @@ class _$SignOutImpl with DiagnosticableTreeMixin implements _SignOut {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginModel loginModel)? signIn,
     TResult Function()? signOut,
+    TResult Function()? obscure,
     TResult Function()? loggedIn,
     required TResult orElse(),
   }) {
@@ -307,6 +322,7 @@ class _$SignOutImpl with DiagnosticableTreeMixin implements _SignOut {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignIn value) signIn,
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_Obscure value) obscure,
     required TResult Function(_LoggedIn value) loggedIn,
   }) {
     return signOut(this);
@@ -317,6 +333,7 @@ class _$SignOutImpl with DiagnosticableTreeMixin implements _SignOut {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignIn value)? signIn,
     TResult? Function(_SignOut value)? signOut,
+    TResult? Function(_Obscure value)? obscure,
     TResult? Function(_LoggedIn value)? loggedIn,
   }) {
     return signOut?.call(this);
@@ -327,6 +344,7 @@ class _$SignOutImpl with DiagnosticableTreeMixin implements _SignOut {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignIn value)? signIn,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_Obscure value)? obscure,
     TResult Function(_LoggedIn value)? loggedIn,
     required TResult orElse(),
   }) {
@@ -339,6 +357,126 @@ class _$SignOutImpl with DiagnosticableTreeMixin implements _SignOut {
 
 abstract class _SignOut implements AuthEvent {
   const factory _SignOut() = _$SignOutImpl;
+}
+
+/// @nodoc
+abstract class _$$ObscureImplCopyWith<$Res> {
+  factory _$$ObscureImplCopyWith(
+          _$ObscureImpl value, $Res Function(_$ObscureImpl) then) =
+      __$$ObscureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ObscureImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$ObscureImpl>
+    implements _$$ObscureImplCopyWith<$Res> {
+  __$$ObscureImplCopyWithImpl(
+      _$ObscureImpl _value, $Res Function(_$ObscureImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ObscureImpl with DiagnosticableTreeMixin implements _Obscure {
+  const _$ObscureImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AuthEvent.obscure()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'AuthEvent.obscure'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ObscureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(LoginModel loginModel) signIn,
+    required TResult Function() signOut,
+    required TResult Function() obscure,
+    required TResult Function() loggedIn,
+  }) {
+    return obscure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(LoginModel loginModel)? signIn,
+    TResult? Function()? signOut,
+    TResult? Function()? obscure,
+    TResult? Function()? loggedIn,
+  }) {
+    return obscure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(LoginModel loginModel)? signIn,
+    TResult Function()? signOut,
+    TResult Function()? obscure,
+    TResult Function()? loggedIn,
+    required TResult orElse(),
+  }) {
+    if (obscure != null) {
+      return obscure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignIn value) signIn,
+    required TResult Function(_SignOut value) signOut,
+    required TResult Function(_Obscure value) obscure,
+    required TResult Function(_LoggedIn value) loggedIn,
+  }) {
+    return obscure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SignIn value)? signIn,
+    TResult? Function(_SignOut value)? signOut,
+    TResult? Function(_Obscure value)? obscure,
+    TResult? Function(_LoggedIn value)? loggedIn,
+  }) {
+    return obscure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignIn value)? signIn,
+    TResult Function(_SignOut value)? signOut,
+    TResult Function(_Obscure value)? obscure,
+    TResult Function(_LoggedIn value)? loggedIn,
+    required TResult orElse(),
+  }) {
+    if (obscure != null) {
+      return obscure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Obscure implements AuthEvent {
+  const factory _Obscure() = _$ObscureImpl;
 }
 
 /// @nodoc
@@ -387,6 +525,7 @@ class _$LoggedInImpl with DiagnosticableTreeMixin implements _LoggedIn {
   TResult when<TResult extends Object?>({
     required TResult Function(LoginModel loginModel) signIn,
     required TResult Function() signOut,
+    required TResult Function() obscure,
     required TResult Function() loggedIn,
   }) {
     return loggedIn();
@@ -397,6 +536,7 @@ class _$LoggedInImpl with DiagnosticableTreeMixin implements _LoggedIn {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(LoginModel loginModel)? signIn,
     TResult? Function()? signOut,
+    TResult? Function()? obscure,
     TResult? Function()? loggedIn,
   }) {
     return loggedIn?.call();
@@ -407,6 +547,7 @@ class _$LoggedInImpl with DiagnosticableTreeMixin implements _LoggedIn {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(LoginModel loginModel)? signIn,
     TResult Function()? signOut,
+    TResult Function()? obscure,
     TResult Function()? loggedIn,
     required TResult orElse(),
   }) {
@@ -421,6 +562,7 @@ class _$LoggedInImpl with DiagnosticableTreeMixin implements _LoggedIn {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignIn value) signIn,
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_Obscure value) obscure,
     required TResult Function(_LoggedIn value) loggedIn,
   }) {
     return loggedIn(this);
@@ -431,6 +573,7 @@ class _$LoggedInImpl with DiagnosticableTreeMixin implements _LoggedIn {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_SignIn value)? signIn,
     TResult? Function(_SignOut value)? signOut,
+    TResult? Function(_Obscure value)? obscure,
     TResult? Function(_LoggedIn value)? loggedIn,
   }) {
     return loggedIn?.call(this);
@@ -441,6 +584,7 @@ class _$LoggedInImpl with DiagnosticableTreeMixin implements _LoggedIn {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignIn value)? signIn,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_Obscure value)? obscure,
     TResult Function(_LoggedIn value)? loggedIn,
     required TResult orElse(),
   }) {
@@ -459,6 +603,7 @@ abstract class _LoggedIn implements AuthEvent {
 mixin _$AuthState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
+  bool get obscure => throw _privateConstructorUsedError;
   bool get isLoggedIn => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   LoginResponse? get loginResponse => throw _privateConstructorUsedError;
@@ -476,6 +621,7 @@ abstract class $AuthStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       bool hasError,
+      bool obscure,
       bool isLoggedIn,
       String? message,
       LoginResponse? loginResponse});
@@ -496,6 +642,7 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   $Res call({
     Object? isLoading = null,
     Object? hasError = null,
+    Object? obscure = null,
     Object? isLoggedIn = null,
     Object? message = freezed,
     Object? loginResponse = freezed,
@@ -508,6 +655,10 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
       hasError: null == hasError
           ? _value.hasError
           : hasError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      obscure: null == obscure
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
               as bool,
       isLoggedIn: null == isLoggedIn
           ? _value.isLoggedIn
@@ -536,6 +687,7 @@ abstract class _$$InitialImplCopyWith<$Res>
   $Res call(
       {bool isLoading,
       bool hasError,
+      bool obscure,
       bool isLoggedIn,
       String? message,
       LoginResponse? loginResponse});
@@ -554,6 +706,7 @@ class __$$InitialImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? hasError = null,
+    Object? obscure = null,
     Object? isLoggedIn = null,
     Object? message = freezed,
     Object? loginResponse = freezed,
@@ -566,6 +719,10 @@ class __$$InitialImplCopyWithImpl<$Res>
       hasError: null == hasError
           ? _value.hasError
           : hasError // ignore: cast_nullable_to_non_nullable
+              as bool,
+      obscure: null == obscure
+          ? _value.obscure
+          : obscure // ignore: cast_nullable_to_non_nullable
               as bool,
       isLoggedIn: null == isLoggedIn
           ? _value.isLoggedIn
@@ -589,6 +746,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   const _$InitialImpl(
       {required this.isLoading,
       required this.hasError,
+      required this.obscure,
       required this.isLoggedIn,
       this.message,
       this.loginResponse});
@@ -598,6 +756,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   @override
   final bool hasError;
   @override
+  final bool obscure;
+  @override
   final bool isLoggedIn;
   @override
   final String? message;
@@ -606,7 +766,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AuthState(isLoading: $isLoading, hasError: $hasError, isLoggedIn: $isLoggedIn, message: $message, loginResponse: $loginResponse)';
+    return 'AuthState(isLoading: $isLoading, hasError: $hasError, obscure: $obscure, isLoggedIn: $isLoggedIn, message: $message, loginResponse: $loginResponse)';
   }
 
   @override
@@ -616,6 +776,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
       ..add(DiagnosticsProperty('type', 'AuthState'))
       ..add(DiagnosticsProperty('isLoading', isLoading))
       ..add(DiagnosticsProperty('hasError', hasError))
+      ..add(DiagnosticsProperty('obscure', obscure))
       ..add(DiagnosticsProperty('isLoggedIn', isLoggedIn))
       ..add(DiagnosticsProperty('message', message))
       ..add(DiagnosticsProperty('loginResponse', loginResponse));
@@ -630,6 +791,7 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
                 other.isLoading == isLoading) &&
             (identical(other.hasError, hasError) ||
                 other.hasError == hasError) &&
+            (identical(other.obscure, obscure) || other.obscure == obscure) &&
             (identical(other.isLoggedIn, isLoggedIn) ||
                 other.isLoggedIn == isLoggedIn) &&
             (identical(other.message, message) || other.message == message) &&
@@ -638,8 +800,8 @@ class _$InitialImpl with DiagnosticableTreeMixin implements _Initial {
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, isLoading, hasError, isLoggedIn, message, loginResponse);
+  int get hashCode => Object.hash(runtimeType, isLoading, hasError, obscure,
+      isLoggedIn, message, loginResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -652,6 +814,7 @@ abstract class _Initial implements AuthState {
   const factory _Initial(
       {required final bool isLoading,
       required final bool hasError,
+      required final bool obscure,
       required final bool isLoggedIn,
       final String? message,
       final LoginResponse? loginResponse}) = _$InitialImpl;
@@ -660,6 +823,8 @@ abstract class _Initial implements AuthState {
   bool get isLoading;
   @override
   bool get hasError;
+  @override
+  bool get obscure;
   @override
   bool get isLoggedIn;
   @override

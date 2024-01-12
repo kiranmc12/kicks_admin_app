@@ -4,5 +4,6 @@ part of 'auth_bloc.dart';
 class AuthEvent with _$AuthEvent {
   const factory AuthEvent.signIn({required LoginModel loginModel}) = _SignIn;
   const factory AuthEvent.signOut() = _SignOut;
+  const factory AuthEvent.obscure() = _Obscure;
   const factory AuthEvent.loggedIn() = _LoggedIn;
 }

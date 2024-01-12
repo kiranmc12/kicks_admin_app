@@ -9,21 +9,20 @@ import 'package:kicks_sneakerapp/domain/models/login_model/login_model.dart';
 import 'package:kicks_sneakerapp/domain/models/login_response/login_response.dart';
 import 'package:kicks_sneakerapp/domain/repositories/authentication_repository.dart';
 
-@injectable
 class ApiAuth implements AuthRepository {
   final Dio _dio = Dio(BaseOptions(baseUrl: ApiEndpoints.baseUrl));
 
   @override
-  Future<Either<ErrorMsg, LoginResponse>> signIn(
-      LoginModel loginModel) async {
+  Future<Either<ErrorMsg, LoginResponse>> signIn(LoginModel loginModel) async {
     try {
-      final response =
-          await _dio.post(ApiEndpoints.signIn, data: loginModel.toJson());
+      print(loginModel.toJson());
+      final response = await _dio.post(ApiEndpoints.signIn,
+          data: {"email": loginModel.email, "password": loginModel.password});
       if (response.statusCode == 200 || response.statusCode == 201) {
         return Right(LoginResponse.fromJson(response.data));
       } else {
-        return Left(ErrorMsg(
-            message: LoginResponse.fromJson(response.data).message!));
+        return Left(
+            ErrorMsg(message: LoginResponse.fromJson(response.data).message!));
       }
     } on DioException catch (dioError) {
       log('dio error => ${dioError.message.toString()}');
