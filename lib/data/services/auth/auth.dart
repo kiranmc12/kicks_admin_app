@@ -16,8 +16,8 @@ class ApiAuth implements AuthRepository {
   Future<Either<ErrorMsg, LoginResponse>> signIn(LoginModel loginModel) async {
     try {
       print(loginModel.toJson());
-      final response = await _dio.post(ApiEndpoints.signIn,
-          data: {"email": loginModel.email, "password": loginModel.password});
+      final response =
+          await _dio.post(ApiEndpoints.signIn, data: loginModel.toJson());
       if (response.statusCode == 200 || response.statusCode == 201) {
         return Right(LoginResponse.fromJson(response.data));
       } else {

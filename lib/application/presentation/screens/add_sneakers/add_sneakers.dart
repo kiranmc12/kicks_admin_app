@@ -7,9 +7,9 @@ class ScreenAddSneakers extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("add sneakers"),
+        title: const Text("add sneakers"),
       ),
-      body: Center(
+      body: const Center(
         child: Text("add sneakers"),
       ),
     );
