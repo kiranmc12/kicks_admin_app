@@ -3,13 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/bloc/auth_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
-import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/validator_functions/validator.dart';
 
-class CustomTextFormFieldWidget extends StatelessWidget {
+class CustomTextFormFieldWidget extends StatefulWidget {
   final String label;
   final TextEditingController controller;
-  final TextInputType keyboardType;
+  final TextInputType? keyboardType;
   final bool isPassword;
   final String hintText;
 
@@ -17,10 +16,18 @@ class CustomTextFormFieldWidget extends StatelessWidget {
     Key? key,
     required this.label,
     required this.controller,
-    required this.keyboardType,
+    this.keyboardType = TextInputType.text,
     this.isPassword = false,
     required this.hintText,
   }) : super(key: key);
+
+  @override
+  State<CustomTextFormFieldWidget> createState() =>
+      _CustomTextFormFieldWidgetState();
+}
+
+class _CustomTextFormFieldWidgetState extends State<CustomTextFormFieldWidget> {
+  bool obscure = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,28 +35,28 @@ class CustomTextFormFieldWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          label,
+          widget.label,
           style: const TextStyle(color: kWhite),
         ),
         BlocBuilder<AuthBloc, AuthState>(
           builder: (context, state) {
             return TextFormField(
-              controller: controller,
+              controller: widget.controller,
               autovalidateMode: AutovalidateMode.onUserInteraction,
               validator: (value) {
-                if (isPassword && value!.isEmpty) {
+                if (widget.isPassword && value!.isEmpty) {
                   return 'Enter password';
-                } else if (isPassword && value!.length < 8) {
+                } else if (widget.isPassword && value!.length < 8) {
                   return 'Password must contain 8 characters';
-                } else if (!isPassword || value!.isEmpty) {
+                } else if (!widget.isPassword || value!.isEmpty) {
                   return isValidEmail(value!) ? null : 'Enter valid email';
                 }
                 return null;
               },
-              obscureText: isPassword ? state.obscure : false,
-              keyboardType: keyboardType,
+              obscureText: widget.isPassword ? obscure : false,
+              keyboardType: widget.keyboardType,
               decoration: InputDecoration(
-                hintText: hintText,
+                hintText: widget.hintText,
                 errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
                   borderSide: const BorderSide(
@@ -70,18 +77,16 @@ class CustomTextFormFieldWidget extends StatelessWidget {
                 ),
                 fillColor: kWhite,
                 filled: true,
-                suffixIcon: !isPassword
+                suffixIcon: !widget.isPassword
                     ? const Icon(Icons.email, color: kBlack)
                     : IconButton(
                         onPressed: () {
-                          context
-                              .read<AuthBloc>()
-                              .add(const AuthEvent.obscure());
+                          setState(() {
+                            obscure = !obscure;
+                          });
                         },
                         icon: Icon(
-                          state.obscure
-                              ? Icons.remove_red_eye
-                              : Iconsax.eye_outline,
+                          obscure ? Icons.remove_red_eye : Iconsax.eye_outline,
                           color: kBlack,
                         ),
                       ),

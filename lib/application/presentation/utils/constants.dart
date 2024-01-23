@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 
 late final double sHeight;
 late final double sWidth;
@@ -20,6 +22,22 @@ const kRadius5 = Radius.circular(5);
 const kRadius10 = Radius.circular(10);
 const kRadius20 = Radius.circular(20);
 const kRadius50 = Radius.circular(50);
+
+TextStyle roboto(
+    {double fontSize = 0.035,
+    FontWeight fontWeight = FontWeight.normal,
+    Color color = kBlack}) {
+  return GoogleFonts.roboto(
+      fontSize: fontSize * sWidth, fontWeight: fontWeight, color: color);
+}
+
+TextStyle tektur(
+    {double fontSize = 0.035,
+    FontWeight fontWeight = FontWeight.normal,
+    Color color = kBlack}) {
+  return GoogleFonts.tektur(
+      fontSize: fontSize * sWidth, fontWeight: fontWeight, color: color);
+}
 
 void sizeFinder(BuildContext context) {
   final size = MediaQuery.of(context).size;

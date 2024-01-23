@@ -19,8 +19,7 @@ class KicksAdmin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => AuthBloc(ApiAuth()))],
+      providers: [BlocProvider(create: (context) => AuthBloc(ApiAuth()))],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

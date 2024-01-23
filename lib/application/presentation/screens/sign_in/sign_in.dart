@@ -5,7 +5,7 @@ import 'package:kicks_sneakerapp/application/presentation/routes/routes.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/sign_in/widgets/custom_textform_field.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
-import 'package:kicks_sneakerapp/domain/models/login_model/login_model.dart';
+import 'package:kicks_sneakerapp/domain/models/auth/login_model/login_model.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 
 class ScreenSignIn extends StatelessWidget {

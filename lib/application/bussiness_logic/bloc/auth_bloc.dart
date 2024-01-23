@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kicks_sneakerapp/data/shared_preferences/shared_pref.dart';
-import 'package:kicks_sneakerapp/domain/models/login_model/login_model.dart';
-import 'package:kicks_sneakerapp/domain/models/login_response/login_response.dart';
+import 'package:kicks_sneakerapp/domain/models/auth/login_model/login_model.dart';
+import 'package:kicks_sneakerapp/domain/models/auth/login_response/login_response.dart';
 import 'package:kicks_sneakerapp/domain/models/token/token.dart';
 import 'package:kicks_sneakerapp/domain/repositories/authentication_repository.dart';
 

@@ -5,8 +5,8 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kicks_sneakerapp/domain/core/api_endpoints/api_endpoints.dart';
 import 'package:kicks_sneakerapp/domain/core/error/errors.dart';
-import 'package:kicks_sneakerapp/domain/models/login_model/login_model.dart';
-import 'package:kicks_sneakerapp/domain/models/login_response/login_response.dart';
+import 'package:kicks_sneakerapp/domain/models/auth/login_model/login_model.dart';
+import 'package:kicks_sneakerapp/domain/models/auth/login_response/login_response.dart';
 import 'package:kicks_sneakerapp/domain/repositories/authentication_repository.dart';
 
 class ApiAuth implements AuthRepository {
@@ -26,7 +26,7 @@ class ApiAuth implements AuthRepository {
       }
     } on DioException catch (dioError) {
       log('dio error => ${dioError.message.toString()}');
-      return Left(ErrorMsg(message: 'something went wrong'));
+      return Left(ErrorMsg(message: dioError.response!.data['message']));
     } catch (e) {
       log('error => ${e.toString()}');
       return Left(ErrorMsg(message: e.toString()));

@@ -28,13 +28,10 @@ class ScreenSplash extends StatelessWidget {
             Navigator.popAndPushNamed(context, Routes.signInPage);
           }
         },
-        child: const Center(
+        child: Center(
           child: Text(
             "Kicks",
-            style: TextStyle(
-              color: kWhite,
-              fontSize: 35.0,
-            ),
+            style: tektur(color: kWhite, fontSize: 0.08),
           ),
         ),
       ),
