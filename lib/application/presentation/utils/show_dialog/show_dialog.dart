@@ -1,35 +1,36 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
 
-class AlertDialogWidget extends StatelessWidget {
-  final String title;
-  final String content;
-  final void Function()? okCallback;
-
-  const AlertDialogWidget({
-    Key? key,
-    required this.title,
-    required this.content,
-    this.okCallback,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text(title),
-      content: Text(content),
-      actions: [
-        TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text("Cancel")),
-        TextButton(
-            onPressed: () {
-              okCallback;
-            },
-            child: const Text("Ok"))
-      ],
-    );
-  }
+Future<dynamic> customShowDialog(
+    {required BuildContext context,
+     required Function onPress}) {
+  return showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: kGreen,
+                    foregroundColor: kWhite),
+                child: const Text('NO'),
+              ),
+              kWidth20,
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  onPress();
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: kRed, foregroundColor: kWhite),
+                child: const Text('YES'),
+              )
+            ],
+            title: const Text('Are you sure?'),
+          ));
 }
+

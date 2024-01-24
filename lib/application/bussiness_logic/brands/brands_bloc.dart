@@ -30,11 +30,15 @@ class BrandsBloc extends Bloc<BrandsEvent, BrandsState> {
               isAdding: false,
               isDone: false,
               isUpdating: false,
-              message: null)), (getBrandsResponseModel) {
+              message: null)),
+               (getBrandsResponseModel) {
         brandController.text = "";
-        for (var brand in getBrandsResponseModel.data!) {
-          brandMap[brand.category!] = brand.id!;
+        if (getBrandsResponseModel.data != null) {
+          for (var brand in getBrandsResponseModel.data!) {
+            brandMap[brand.category!] = brand.id!;
+          }
         }
+
         emit(state.copyWith(
             isLoading: false,
             isAdding: false,
@@ -111,7 +115,7 @@ class BrandsBloc extends Bloc<BrandsEvent, BrandsState> {
               isUpdating: false)),
           (getBrandResponse) => emit(state.copyWith(
               isDone: true, message: "Brand updated sucessfully")));
-      add(BrandsEvent.getBrand());
+      add(const BrandsEvent.getBrand());
     });
 
     on<_TapEdit>((event, emit) {
