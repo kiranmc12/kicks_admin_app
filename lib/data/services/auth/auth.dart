@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
 import 'package:kicks_sneakerapp/domain/core/api_endpoints/api_endpoints.dart';
 import 'package:kicks_sneakerapp/domain/core/error/errors.dart';
 import 'package:kicks_sneakerapp/domain/models/auth/login_model/login_model.dart';
@@ -13,7 +12,7 @@ class ApiAuth implements AuthRepository {
   final Dio _dio = Dio(BaseOptions(baseUrl: ApiEndpoints.baseUrl));
 
   @override
-  Future<Either<ErrorMsg, LoginResponse>> signIn(LoginModel loginModel) async {
+  Future<Either<Failure, LoginResponse>> signIn(LoginModel loginModel) async {
     try {
       print(loginModel.toJson());
       final response =
@@ -22,14 +21,14 @@ class ApiAuth implements AuthRepository {
         return Right(LoginResponse.fromJson(response.data));
       } else {
         return Left(
-            ErrorMsg(message: LoginResponse.fromJson(response.data).message!));
+            Failure(message: LoginResponse.fromJson(response.data).message!));
       }
     } on DioException catch (dioError) {
       log('dio error => ${dioError.message.toString()}');
-      return Left(ErrorMsg(message: dioError.response!.data['message']));
+      return Left(Failure(message: dioError.response!.data['message']));
     } catch (e) {
       log('error => ${e.toString()}');
-      return Left(ErrorMsg(message: e.toString()));
+      return Left(Failure(message: e.toString()));
     }
   }
 }

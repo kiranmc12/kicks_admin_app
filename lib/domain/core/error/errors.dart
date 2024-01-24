@@ -1,6 +1,6 @@
-class ErrorMsg {
+class Failure {
   String message;
-  ErrorMsg({
+  Failure({
     required this.message,
   });
 }

@@ -22,7 +22,27 @@ const kRadius5 = Radius.circular(5);
 const kRadius10 = Radius.circular(10);
 const kRadius20 = Radius.circular(20);
 const kRadius50 = Radius.circular(50);
+ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
+  side: const BorderSide(color: kWhite),
+  fixedSize: Size(sWidth * 0.30, sWidth * 0.10),
+  backgroundColor: kBlack,
+  foregroundColor: kWhite,
+  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(kRadius5)),
+);
 
+ButtonStyle elevatedButtonStyleBlack = ElevatedButton.styleFrom(
+  side: const BorderSide(color: kWhite),
+  backgroundColor: kBlack,
+  foregroundColor: kWhite,
+  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(kRadius5)),
+);
+
+ButtonStyle elevatedButtonStyleRed = ElevatedButton.styleFrom(
+  side: const BorderSide(color: kWhite),
+  backgroundColor: kRed,
+  foregroundColor: kWhite,
+  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(kRadius5)),
+);
 TextStyle roboto(
     {double fontSize = 0.035,
     FontWeight fontWeight = FontWeight.normal,

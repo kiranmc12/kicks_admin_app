@@ -7,18 +7,20 @@ import 'package:kicks_sneakerapp/application/presentation/utils/validator_functi
 
 class CustomTextFormFieldWidget extends StatefulWidget {
   final String label;
-  final TextEditingController controller;
+  final Color? color;
+  final TextEditingController? controller;
   final TextInputType? keyboardType;
   final bool isPassword;
   final String hintText;
+  
 
   const CustomTextFormFieldWidget({
     Key? key,
     required this.label,
-    required this.controller,
+    this.controller,
     this.keyboardType = TextInputType.text,
     this.isPassword = false,
-    required this.hintText,
+    required this.hintText, this.color,
   }) : super(key: key);
 
   @override
@@ -60,12 +62,12 @@ class _CustomTextFormFieldWidgetState extends State<CustomTextFormFieldWidget> {
                 errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
                   borderSide: const BorderSide(
-                      color: Colors.red), // Adjust the color as needed
+                      color:kRed), // Adjust the color as needed
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
                   borderSide: const BorderSide(
-                      color: Colors.blue), // Adjust the color as needed
+                     ), // Adjust the color as needed
                 ),
                 labelStyle: const TextStyle(fontSize: 16.0),
                 border: OutlineInputBorder(

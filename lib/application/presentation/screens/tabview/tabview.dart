@@ -24,7 +24,7 @@ class ScreenTabView extends StatelessWidget {
                       child: Text("Offers"),
                     ),
                     Tab(
-                      child: Text("Category"),
+                      child: Text("Brands"),
                     ),
                   ])),
           body: const Padding(
