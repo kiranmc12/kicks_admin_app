@@ -49,12 +49,11 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
-            borderSide:
-                const BorderSide(color: kRed), 
+            borderSide: const BorderSide(color: kRed),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
-            borderSide: const BorderSide(), 
+            borderSide: const BorderSide(),
           ),
           labelStyle: const TextStyle(fontSize: 16.0),
           border: OutlineInputBorder(

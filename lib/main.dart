@@ -24,7 +24,7 @@ class KicksAdmin extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => AuthBloc(ApiAuth())),
         BlocProvider(create: (context) => BrandsBloc(BrandApi()))
-        ],
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

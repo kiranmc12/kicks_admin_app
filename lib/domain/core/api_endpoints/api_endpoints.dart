@@ -3,11 +3,12 @@ class ApiEndpoints {
   // static String baseUrl = 'http://192.168.1.4:3000';
 
   static String signIn = '/admin/adminlogin';
-    static String refreshUrl = '/validate-token';
+  static String refreshUrl = '/validate-token';
 
   static String catogery = '/admin/category';
   static String coupon = '/admin/coupons';
   static String inventory = '/admin/inventories';
+  static String editInventoryDetails='/admin/inventories/details';
   static String inventoryImage = '/admin/inventories/:id/image';
   static String inventoryStock = '/admin/inventories/:id/stock';
   static String offer = '/admin/offers';
@@ -20,4 +21,3 @@ class ApiEndpoints {
   static String blockUsers = '/admin/users/block';
   static String unblockUsers = '/admin/users/unblock';
 }
-

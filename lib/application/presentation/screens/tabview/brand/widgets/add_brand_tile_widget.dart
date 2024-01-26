@@ -69,9 +69,8 @@ class AddBrandTileWidget extends StatelessWidget {
                         icon: Icon(state.isUpdating
                             ? Icons.edit_note_outlined
                             : Icons.add),
-                        label: Text(state.isUpdating
-                            ? 'Edit Brand'
-                            : 'Add Brand'));
+                        label: Text(
+                            state.isUpdating ? 'Edit Brand' : 'Add Brand'));
                   },
                 ),
               )

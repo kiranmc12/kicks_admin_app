@@ -23,7 +23,6 @@ class BrandsTab extends StatelessWidget {
           style: tektur(fontSize: 0.04),
         ),
         const BrandView(),
-      
       ],
     );
   }

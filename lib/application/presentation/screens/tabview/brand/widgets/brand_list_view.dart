@@ -33,8 +33,7 @@ class BrandListViewWidget extends StatelessWidget {
               }
 
               await customShowDialog(
-                  context: context,
-                   onPress: onDeletePressed);
+                  context: context, onPress: onDeletePressed);
             },
             icon: Icon(
               Icons.delete,

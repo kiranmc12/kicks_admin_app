@@ -4,8 +4,7 @@ import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
 
 Future<dynamic> customShowDialog(
-    {required BuildContext context,
-     required Function onPress}) {
+    {required BuildContext context, required Function onPress}) {
   return showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -15,8 +14,7 @@ Future<dynamic> customShowDialog(
                   Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: kGreen,
-                    foregroundColor: kWhite),
+                    backgroundColor: kGreen, foregroundColor: kWhite),
                 child: const Text('NO'),
               ),
               kWidth20,
@@ -33,4 +31,3 @@ Future<dynamic> customShowDialog(
             title: const Text('Are you sure?'),
           ));
 }
-

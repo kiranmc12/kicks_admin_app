@@ -9,15 +9,12 @@ import 'package:kicks_sneakerapp/domain/models/brand/put_brand_model/put_brand_m
 abstract class BrandRepository {
   Future<Either<Failure, BrandResponseModel>> addBrand(
       {required PostBrandModel postBrandModel});
-      
+
   Future<Either<Failure, GetBrandModel>> getBrands();
 
   Future<Either<Failure, BrandResponseModel>> editBrand(
-      {required PutBrandModel putBrandModel
-      });
+      {required PutBrandModel putBrandModel});
 
   Future<Either<Failure, BrandResponseModel>> deleteBrand(
-      {required DeleteBrandModel deleteBrandModel
-      });
-
+      {required DeleteBrandModel deleteBrandModel});
 }

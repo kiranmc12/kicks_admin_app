@@ -30,8 +30,7 @@ class BrandsBloc extends Bloc<BrandsEvent, BrandsState> {
               isAdding: false,
               isDone: false,
               isUpdating: false,
-              message: null)),
-               (getBrandsResponseModel) {
+              message: null)), (getBrandsResponseModel) {
         brandController.text = "";
         if (getBrandsResponseModel.data != null) {
           for (var brand in getBrandsResponseModel.data!) {

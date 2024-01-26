@@ -12,7 +12,6 @@ class CustomTextFormFieldWidget extends StatefulWidget {
   final TextInputType? keyboardType;
   final bool isPassword;
   final String hintText;
-  
 
   const CustomTextFormFieldWidget({
     Key? key,
@@ -20,7 +19,8 @@ class CustomTextFormFieldWidget extends StatefulWidget {
     this.controller,
     this.keyboardType = TextInputType.text,
     this.isPassword = false,
-    required this.hintText, this.color,
+    required this.hintText,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -62,12 +62,11 @@ class _CustomTextFormFieldWidgetState extends State<CustomTextFormFieldWidget> {
                 errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
                   borderSide: const BorderSide(
-                      color:kRed), // Adjust the color as needed
+                      color: kRed), // Adjust the color as needed
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.0),
-                  borderSide: const BorderSide(
-                     ), // Adjust the color as needed
+                  borderSide: const BorderSide(), // Adjust the color as needed
                 ),
                 labelStyle: const TextStyle(fontSize: 16.0),
                 border: OutlineInputBorder(
