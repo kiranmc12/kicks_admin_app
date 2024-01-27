@@ -5,6 +5,9 @@ import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 late final double sHeight;
 late final double sWidth;
 
+const kEmpty = SizedBox();
+
+
 const kHeight5 = SizedBox(height: 5);
 const kHeight10 = SizedBox(height: 10);
 const kHeight20 = SizedBox(height: 20);
@@ -22,6 +25,14 @@ const kRadius5 = Radius.circular(5);
 const kRadius10 = Radius.circular(10);
 const kRadius20 = Radius.circular(20);
 const kRadius50 = Radius.circular(50);
+
+
+TextStyle priceStyleCross = TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: sWidth * 0.03,
+    color: kBlack.withOpacity(0.7),
+    decoration: TextDecoration.lineThrough);
+
 ButtonStyle elevatedButtonStyle = ElevatedButton.styleFrom(
   side: const BorderSide(color: kWhite),
   fixedSize: Size(sWidth * 0.30, sWidth * 0.10),
@@ -64,3 +75,11 @@ void sizeFinder(BuildContext context) {
   sHeight = size.height;
   sWidth = size.width;
 }
+const String nikeUrl =
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/330px-Logo_NIKE.svg.png";
+const String adidasUrl =
+    "https://imgs.search.brave.com/eFLIdRLc7yR2-jZ4bi28dC5qyUum8A5tlYLDphjEGsw/rs:fit:500:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8xLzFiL0Fk/aWRhc18yMDIyX2xv/Z28uc3ZnLzUxMnB4/LUFkaWRhc18yMDIy/X2xvZ28uc3ZnLnBu/Zw";
+const String pumaURL =
+    "https://imgs.search.brave.com/oOFidxC2ihu_aIu98spBekqq3iYWqNb7htov-9dv4A8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/ZmFtb3VzbG9nb3Mu/b3JnL2xvZ29zL3B1/bWEtbG9nby5qcGc";
+const String shoe1uRL =
+    "https://assets.adidas.com/images/w_600,f_auto,q_auto/f81a93942800473fa6cbaf7b00b2d48b_9366/Campus_00s_Shoes_Blue_H03471_01_standard.jpg";

@@ -282,7 +282,7 @@ abstract class _NextPage implements GetInventoryEvent {
 mixin _$GetInventoryState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool get hasError => throw _privateConstructorUsedError;
-  bool get LoadMore => throw _privateConstructorUsedError;
+  bool get loadMore => throw _privateConstructorUsedError;
   String? get message => throw _privateConstructorUsedError;
   List<Inventory>? get inventories => throw _privateConstructorUsedError;
 
@@ -300,7 +300,7 @@ abstract class $GetInventoryStateCopyWith<$Res> {
   $Res call(
       {bool isLoading,
       bool hasError,
-      bool LoadMore,
+      bool loadMore,
       String? message,
       List<Inventory>? inventories});
 }
@@ -320,7 +320,7 @@ class _$GetInventoryStateCopyWithImpl<$Res, $Val extends GetInventoryState>
   $Res call({
     Object? isLoading = null,
     Object? hasError = null,
-    Object? LoadMore = null,
+    Object? loadMore = null,
     Object? message = freezed,
     Object? inventories = freezed,
   }) {
@@ -333,9 +333,9 @@ class _$GetInventoryStateCopyWithImpl<$Res, $Val extends GetInventoryState>
           ? _value.hasError
           : hasError // ignore: cast_nullable_to_non_nullable
               as bool,
-      LoadMore: null == LoadMore
-          ? _value.LoadMore
-          : LoadMore // ignore: cast_nullable_to_non_nullable
+      loadMore: null == loadMore
+          ? _value.loadMore
+          : loadMore // ignore: cast_nullable_to_non_nullable
               as bool,
       message: freezed == message
           ? _value.message
@@ -360,7 +360,7 @@ abstract class _$$InitialImplCopyWith<$Res>
   $Res call(
       {bool isLoading,
       bool hasError,
-      bool LoadMore,
+      bool loadMore,
       String? message,
       List<Inventory>? inventories});
 }
@@ -378,7 +378,7 @@ class __$$InitialImplCopyWithImpl<$Res>
   $Res call({
     Object? isLoading = null,
     Object? hasError = null,
-    Object? LoadMore = null,
+    Object? loadMore = null,
     Object? message = freezed,
     Object? inventories = freezed,
   }) {
@@ -391,9 +391,9 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.hasError
           : hasError // ignore: cast_nullable_to_non_nullable
               as bool,
-      LoadMore: null == LoadMore
-          ? _value.LoadMore
-          : LoadMore // ignore: cast_nullable_to_non_nullable
+      loadMore: null == loadMore
+          ? _value.loadMore
+          : loadMore // ignore: cast_nullable_to_non_nullable
               as bool,
       message: freezed == message
           ? _value.message
@@ -413,7 +413,7 @@ class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {required this.isLoading,
       required this.hasError,
-      required this.LoadMore,
+      required this.loadMore,
       this.message,
       final List<Inventory>? inventories})
       : _inventories = inventories;
@@ -423,7 +423,7 @@ class _$InitialImpl implements _Initial {
   @override
   final bool hasError;
   @override
-  final bool LoadMore;
+  final bool loadMore;
   @override
   final String? message;
   final List<Inventory>? _inventories;
@@ -438,7 +438,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'GetInventoryState(isLoading: $isLoading, hasError: $hasError, LoadMore: $LoadMore, message: $message, inventories: $inventories)';
+    return 'GetInventoryState(isLoading: $isLoading, hasError: $hasError, loadMore: $loadMore, message: $message, inventories: $inventories)';
   }
 
   @override
@@ -450,15 +450,15 @@ class _$InitialImpl implements _Initial {
                 other.isLoading == isLoading) &&
             (identical(other.hasError, hasError) ||
                 other.hasError == hasError) &&
-            (identical(other.LoadMore, LoadMore) ||
-                other.LoadMore == LoadMore) &&
+            (identical(other.loadMore, loadMore) ||
+                other.loadMore == loadMore) &&
             (identical(other.message, message) || other.message == message) &&
             const DeepCollectionEquality()
                 .equals(other._inventories, _inventories));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLoading, hasError, LoadMore,
+  int get hashCode => Object.hash(runtimeType, isLoading, hasError, loadMore,
       message, const DeepCollectionEquality().hash(_inventories));
 
   @JsonKey(ignore: true)
@@ -472,7 +472,7 @@ abstract class _Initial implements GetInventoryState {
   const factory _Initial(
       {required final bool isLoading,
       required final bool hasError,
-      required final bool LoadMore,
+      required final bool loadMore,
       final String? message,
       final List<Inventory>? inventories}) = _$InitialImpl;
 
@@ -481,7 +481,7 @@ abstract class _Initial implements GetInventoryState {
   @override
   bool get hasError;
   @override
-  bool get LoadMore;
+  bool get loadMore;
   @override
   String? get message;
   @override

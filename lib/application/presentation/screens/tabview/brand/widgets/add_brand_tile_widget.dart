@@ -4,6 +4,7 @@ import 'package:kicks_sneakerapp/application/bussiness_logic/brands/brands_bloc.
 import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/loading_indicator/loading_indicator.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/snackbar/snackbar.dart';
 import 'package:kicks_sneakerapp/application/presentation/widgets/custom_textfield_widget.dart';
 import 'package:kicks_sneakerapp/domain/models/brand/post_brand_model/post_brand_model.dart';
 import 'package:kicks_sneakerapp/domain/models/brand/put_brand_model/put_brand_model.dart';
@@ -44,6 +45,19 @@ class AddBrandTileWidget extends StatelessWidget {
                     }
                     return TextButton.icon(
                         onPressed: () {
+                          final brandName = context
+                              .read<BrandsBloc>()
+                              .brandController
+                              .text
+                              .trim();
+
+                          if (brandName.isEmpty) {
+                            showSnack(
+                                context: context,
+                                message: "Brand name cannot be empty");
+                            return;
+                          }
+
                           FocusScope.of(context).unfocus();
                           state.isUpdating
                               ? context.read<BrandsBloc>().add(

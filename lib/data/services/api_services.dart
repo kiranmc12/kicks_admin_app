@@ -139,6 +139,9 @@ class ApiService {
       final response = await Dio(
               BaseOptions(baseUrl: baseUrl, headers: {'RefreshToken': token}))
           .get(ApiEndpoints.refreshUrl);
+      print(response.statusCode);
+            print(response.data);
+
       await SharedPref.setAcessToken(accessToken: response.data.toString());
     } catch (e) {
       rethrow;

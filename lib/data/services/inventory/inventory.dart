@@ -28,9 +28,11 @@ class InventoryApi implements InventoryRepository {
   Future<Either<Failure, AddInventoryResponseModel>> addInventory(
       {required FormData formData}) async {
     try {
+      print(formData);
       final response = await apiService.post(ApiEndpoints.inventory,
           data: formData, headers: {'content-Type': 'multipart/form-data'});
       if (response.statusCode == 200 || response.statusCode == 201) {
+        print(AddInventoryResponseModel.fromJson(response.data));
         return Right(AddInventoryResponseModel.fromJson(response.data));
       } else {
         return Left(Failure(
@@ -105,7 +107,7 @@ class InventoryApi implements InventoryRepository {
   Future<Either<Failure, GetInventoryResponseModel>> getInventory(
       {required GetResponseQuery getResponseQuery}) async {
     try {
-      final response = await apiService.post(ApiEndpoints.inventory,
+      final response = await apiService.get(ApiEndpoints.inventory,
           queryParameters: getResponseQuery.toJson());
       if (response.statusCode == 200) {
         return Right(GetInventoryResponseModel.fromJson(response.data));

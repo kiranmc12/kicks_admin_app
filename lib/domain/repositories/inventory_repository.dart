@@ -7,7 +7,6 @@ import 'package:kicks_sneakerapp/domain/models/inventory/delete/delete_inventory
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/edit_inventory_details_model/edit_inventory_details_model.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/edit_inventory_details_query.dart/edit_inventory_details_query.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/edit_inventory_response_model/edit_inventory_response_model.dart';
-import 'package:kicks_sneakerapp/domain/models/inventory/edit/image/update_image_model/update_image_model.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/image/update_image_query/update_image_query.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/image/update_inventory_image_response_model/update_inventory_image_response.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/update_stock_model/update_stock_model.dart';

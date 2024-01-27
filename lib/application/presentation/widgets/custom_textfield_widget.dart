@@ -28,12 +28,9 @@ class CustomTextField extends StatelessWidget {
     return Container(
       width: width,
       decoration: BoxDecoration(
-        color: color,
+        color: kWhite,
         borderRadius: BorderRadius.circular(10.0), // Adjust the value as needed
-        border: Border.all(
-          color: Colors.grey, // Add the desired border color
-          width: 1.0, // Adjust the border width as needed
-        ),
+    
       ),
       child: TextFormField(
         validator: (value) {
@@ -42,15 +39,16 @@ class CustomTextField extends StatelessWidget {
           }
           return null;
         },
+        autovalidateMode: AutovalidateMode.onUserInteraction,
         controller: controller,
         textCapitalization: textCapitalization,
         textAlign: textAlign,
         keyboardType: textInputType,
         decoration: InputDecoration(
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
-            borderSide: const BorderSide(color: kRed),
-          ),
+          // errorBorder: OutlineInputBorder(
+          //   borderRadius: BorderRadius.circular(10.0),
+          //   borderSide: const BorderSide(color: kRed),
+          // ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
             borderSide: const BorderSide(),

@@ -6,7 +6,7 @@ import 'package:flutter_floating_bottom_bar/flutter_floating_bottom_bar.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/auth/auth_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/routes/routes.dart';
-import 'package:kicks_sneakerapp/application/presentation/screens/add_sneakers/add_sneakers.dart';
+import 'package:kicks_sneakerapp/application/presentation/screens/inventory/add_inventory.dart.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/all_users/all_users.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/home/home_screen.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/tabview/tabview.dart';

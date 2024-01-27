@@ -3,9 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/auth/auth_bloc.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/brands/brands_bloc.dart';
+import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/add_inventory/add_inventory_bloc.dart';
+import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/get_inventory/get_inventory_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/routes/route_generator.dart';
 import 'package:kicks_sneakerapp/data/services/auth/auth.dart';
 import 'package:kicks_sneakerapp/data/services/brands/brands.dart';
+import 'package:kicks_sneakerapp/data/services/inventory/inventory.dart';
 
 import 'application/presentation/routes/routes.dart';
 
@@ -23,7 +26,9 @@ class KicksAdmin extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => AuthBloc(ApiAuth())),
-        BlocProvider(create: (context) => BrandsBloc(BrandApi()))
+        BlocProvider(create: (context) => BrandsBloc(BrandApi())),
+        BlocProvider(create: (context) => AddInventoryBloc(InventoryApi())),
+        BlocProvider(create: (context) => GetInventoryBloc(InventoryApi())),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
