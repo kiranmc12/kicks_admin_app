@@ -75,6 +75,11 @@ void sizeFinder(BuildContext context) {
   sHeight = size.height;
   sWidth = size.width;
 }
+
+TextStyle priceStyle =
+    TextStyle(fontWeight: FontWeight.w700, fontSize: sWidth * 0.050);
+    const TextStyle headStyle = TextStyle(fontWeight: FontWeight.w700);
+
 const String nikeUrl =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/330px-Logo_NIKE.svg.png";
 const String adidasUrl =

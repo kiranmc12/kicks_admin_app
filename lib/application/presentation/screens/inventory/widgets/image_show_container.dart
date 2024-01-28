@@ -16,7 +16,9 @@ class ImageShowContainer extends StatelessWidget {
       builder: (context, state) {
         return InkWell(
           onTap: () {
-            context.read<AddInventoryBloc>().add(const AddInventoryEvent.addImage());
+            context
+                .read<AddInventoryBloc>()
+                .add(const AddInventoryEvent.addImage());
           },
           child: Row(
             children: [
@@ -27,15 +29,15 @@ class ImageShowContainer extends StatelessWidget {
                 decoration: const BoxDecoration(
                     color: kGrey, borderRadius: BorderRadius.all(kRadius10)),
                 child: SizedBox(
-                  width: double.infinity,
-                  child: state.image != null
+                    width: double.infinity,
+                    child: state.image != null
                         ? Image.file(state.image!.fileImage)
-                        : Image.network(shoe1uRL)
-                ),
+                        : Center(
+                            child: const Column(
+                            children: [Icon(Iconsax.image), Text('Add Image')],
+                          ))),
               ),
-              const Column(
-                children: [Icon(Iconsax.image), Text('Add Image')],
-              )
+            
             ],
           ),
         );

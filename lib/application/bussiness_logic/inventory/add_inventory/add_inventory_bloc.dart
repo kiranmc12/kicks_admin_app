@@ -22,7 +22,8 @@ class AddInventoryBloc extends Bloc<AddInventoryEvent, AddInventoryState> {
 
   AddInventoryBloc(this.inventoryApi) : super(AddInventoryState.initial()) {
     on<_AddSneaker>((event, emit) async {
-      emit(AddInventoryState.initial().copyWith(isLoading: true,isAdded: false));
+      emit(AddInventoryState.initial()
+          .copyWith(isLoading: true, isAdded: false));
       final tokens = await SharedPref.getToken();
       final result = await inventoryApi.addInventory(formData: event.formData);
       result.fold((failure) {
@@ -33,6 +34,9 @@ class AddInventoryBloc extends Bloc<AddInventoryEvent, AddInventoryState> {
             isAdded: true,
             image: null,
             addInventoryResponseModel: addInventoryResponseModel));
+        productNameController.clear();
+        productPriceController.clear();
+        productQuantityController.clear();
       });
     });
 

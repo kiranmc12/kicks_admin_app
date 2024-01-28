@@ -37,7 +37,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         await SharedPref.setToken(
           tokenModel: TokenModel(
             accessToken: repsonseModel.data!.accessToken!,
-            refreshToken: repsonseModel.data!.accessToken!,
+            refreshToken: repsonseModel.data!.refreshToken!,
           ),
         );
         await SharedPref.setLogin();

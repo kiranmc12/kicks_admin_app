@@ -32,7 +32,6 @@ class ScreenAddSneakers extends StatelessWidget {
                     hintText: 'Item Name',
                     controller:
                         context.read<AddInventoryBloc>().productNameController,
-                    textInputType: TextInputType.emailAddress,
                     icon: Iconsax.arrow_right2,
                   ),
                   kHeight10,
@@ -41,6 +40,7 @@ class ScreenAddSneakers extends StatelessWidget {
                     hintText: '10000',
                     controller:
                         context.read<AddInventoryBloc>().productPriceController,
+                        textInputType: TextInputType.number,
                     icon: Iconsax.dollar_circle,
                   ),
                   kHeight10,

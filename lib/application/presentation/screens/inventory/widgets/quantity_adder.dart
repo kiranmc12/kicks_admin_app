@@ -16,14 +16,18 @@ class QuantityAdder extends StatelessWidget {
       children: [
         const Text('Add Quantity'),
         kWidth30,
-        IconButton(onPressed: () { context
+        IconButton(
+            onPressed: () {
+              context
                   .read<AddInventoryBloc>()
-                  .add(const AddInventoryEvent.decrementQuantity());}, icon: const Icon(Iconsax.minus_cirlce)),
+                  .add(const AddInventoryEvent.decrementQuantity());
+            },
+            icon: const Icon(Iconsax.minus_cirlce)),
         CustomTextField(
           hintText: '0',
           controller:
               context.read<AddInventoryBloc>().productQuantityController,
-          width: sWidth * 0.10,
+          width: sWidth * 0.25,
           textAlign: TextAlign.center,
         ),
         IconButton(

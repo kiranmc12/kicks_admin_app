@@ -17,6 +17,7 @@ class ApiService {
     try {
       final accessToken =
           await SharedPref.getToken().then((token) => token.accessToken);
+      print(accessToken);
       dio.options.headers.addAll(
         {
           'Authorization': accessToken,
@@ -140,10 +141,11 @@ class ApiService {
               BaseOptions(baseUrl: baseUrl, headers: {'RefreshToken': token}))
           .get(ApiEndpoints.refreshUrl);
       print(response.statusCode);
-            print(response.data);
+      print(response.data);
 
       await SharedPref.setAcessToken(accessToken: response.data.toString());
     } catch (e) {
+      print(e);
       rethrow;
     }
   }
