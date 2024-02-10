@@ -43,7 +43,8 @@ class ScreenEditInventory extends StatelessWidget {
                 onPressed: () {
                   context.read<EditInventoryBloc>().add(
                       EditInventoryEvent.deleteInventory(
-                          deleteInventoryQuery:DeleteInventoryModel(id: inventory.id!) ));
+                          deleteInventoryQuery:
+                              DeleteInventoryModel(id: inventory.id!)));
                 },
                 style: elevatedButtonStyleRed,
                 child: const Text('Delete Invontory'),

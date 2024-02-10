@@ -31,7 +31,6 @@ class KicksAdmin extends StatelessWidget {
         BlocProvider(create: (context) => AddInventoryBloc(InventoryApi())),
         BlocProvider(create: (context) => GetInventoryBloc(InventoryApi())),
         BlocProvider(create: (context) => EditInventoryBloc(InventoryApi())),
-
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

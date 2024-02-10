@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/edit_inventory/edit_inventory_bloc.dart';
@@ -21,8 +20,7 @@ class EditImageTile extends StatelessWidget {
     return InkWell(
       onTap: () {
         context.read<EditInventoryBloc>().add(EditInventoryEvent.updateImage(
-            updateInventoryImageQurrey:
-                UpdateImageQuery(id: inventory.id!)));
+            updateInventoryImageQurrey: UpdateImageQuery(id: inventory.id!)));
       },
       child: BlocBuilder<EditInventoryBloc, EditInventoryState>(
         builder: (context, state) {

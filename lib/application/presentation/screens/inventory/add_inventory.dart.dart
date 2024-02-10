@@ -40,7 +40,7 @@ class ScreenAddSneakers extends StatelessWidget {
                     hintText: '10000',
                     controller:
                         context.read<AddInventoryBloc>().productPriceController,
-                        textInputType: TextInputType.number,
+                    textInputType: TextInputType.number,
                     icon: Iconsax.dollar_circle,
                   ),
                   kHeight10,
@@ -73,4 +73,3 @@ class ScreenAddSneakers extends StatelessWidget {
     );
   }
 }
-

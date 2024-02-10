@@ -31,8 +31,7 @@ class BrandSelector extends StatelessWidget {
                   .keys
                   .map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
-                    value: value,
-                    child: Text(value));
+                    value: value, child: Text(value));
               }).toList(),
               onChanged: (selectedBrand) {
                 context.read<AddInventoryBloc>().add(

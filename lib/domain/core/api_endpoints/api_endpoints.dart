@@ -8,7 +8,7 @@ class ApiEndpoints {
   static String catogery = '/admin/category';
   static String coupon = '/admin/coupons';
   static String inventory = '/admin/inventories';
-  static String editInventoryDetails='/admin/inventories/details';
+  static String editInventoryDetails = '/admin/inventories/details';
   static String inventoryImage = '/admin/inventories/:id/image';
   static String inventoryStock = '/admin/inventories/:id/stock';
   static String offer = '/admin/offers';

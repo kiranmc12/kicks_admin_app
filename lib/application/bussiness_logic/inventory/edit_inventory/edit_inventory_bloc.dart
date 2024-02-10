@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/image_picker/image_picker.dart';
 import 'package:kicks_sneakerapp/data/services/inventory/inventory.dart';
-import 'package:kicks_sneakerapp/domain/core/error/errors.dart';
+import 'package:kicks_sneakerapp/domain/core/error/Failure.dart';
 import 'package:kicks_sneakerapp/domain/models/brand/delete_brand_model/delete_brand_model.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/delete/delete_inventory_model/delete_inventory_model.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/image/update_image_query/update_image_query.dart';
@@ -60,7 +60,6 @@ class EditInventoryBloc extends Bloc<EditInventoryEvent, EditInventoryState> {
       );
     });
 
-    
     on<_DeleteInventory>((event, emit) async {
       emit(state.copyWith(isLoading: true, hasError: false, message: null));
       final result = await inventoryRepositoryApi.deleteInventory(

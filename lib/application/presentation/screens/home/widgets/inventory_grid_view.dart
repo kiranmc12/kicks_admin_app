@@ -42,10 +42,9 @@ class InventoryGridViewWidget extends StatelessWidget {
                 ? state.inventories!.length + 1
                 : state.inventories!.length,
             itemBuilder: (context, index) =>
-              state.inventories!.length == index && state.loadMore
-                  ? const LoadingAnimation(width: 0.10)
-                  : InventoryTile(inventory: state.inventories![index])
-            ,
+                state.inventories!.length == index && state.loadMore
+                    ? const LoadingAnimation(width: 0.10)
+                    : InventoryTile(inventory: state.inventories![index]),
           );
         } else {
           return const Center(child: Text('no data avaliable '));

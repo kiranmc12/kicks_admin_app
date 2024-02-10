@@ -33,6 +33,9 @@ class InventoryTile extends StatelessWidget {
                   width: double.infinity,
                   child: Image.network(
                     inventory.image!,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Center(child: Text("No image available"));
+                    },
                   ),
                 ),
               ),
@@ -75,14 +78,14 @@ class InventoryTile extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                Text("₹4999",
+                const Text("₹4999",
                     style: TextStyle(
                         fontSize: 14, decoration: TextDecoration.lineThrough))
               ],
             ),
             const Spacer(),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.all(kRadius5), color: kGreen),
               child: Text(

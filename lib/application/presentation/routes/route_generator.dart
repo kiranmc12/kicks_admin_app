@@ -19,7 +19,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (ctx) => const ScreenHome());
       case Routes.bottomNav:
         return MaterialPageRoute(builder: (ctx) => const ScreenBottombar());
-        case Routes.editScreen:
+      case Routes.editScreen:
         return arguments is Inventory
             ? MaterialPageRoute(
                 builder: (ctx) => ScreenEditInventory(inventory: arguments))

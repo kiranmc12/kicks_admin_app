@@ -69,7 +69,7 @@ class StockUpdaterWidget extends StatelessWidget {
               child: CustomTextField(
                 controller:
                     context.read<EditInventoryBloc>().stockUpdateController,
-                  textInputType: TextInputType.number,
+                textInputType: TextInputType.number,
                 hintText: '0',
                 width: sWidth * 0.20,
                 textAlign: TextAlign.center,

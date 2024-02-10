@@ -7,7 +7,6 @@ late final double sWidth;
 
 const kEmpty = SizedBox();
 
-
 const kHeight5 = SizedBox(height: 5);
 const kHeight10 = SizedBox(height: 10);
 const kHeight20 = SizedBox(height: 20);
@@ -25,7 +24,6 @@ const kRadius5 = Radius.circular(5);
 const kRadius10 = Radius.circular(10);
 const kRadius20 = Radius.circular(20);
 const kRadius50 = Radius.circular(50);
-
 
 TextStyle priceStyleCross = TextStyle(
     fontWeight: FontWeight.w400,
@@ -78,7 +76,7 @@ void sizeFinder(BuildContext context) {
 
 TextStyle priceStyle =
     TextStyle(fontWeight: FontWeight.w700, fontSize: sWidth * 0.050);
-    const TextStyle headStyle = TextStyle(fontWeight: FontWeight.w700);
+const TextStyle headStyle = TextStyle(fontWeight: FontWeight.w700);
 
 const String nikeUrl =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/330px-Logo_NIKE.svg.png";

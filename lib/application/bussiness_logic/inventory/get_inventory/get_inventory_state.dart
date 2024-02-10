@@ -9,6 +9,6 @@ class GetInventoryState with _$GetInventoryState {
       String? message,
       List<Inventory>? inventories}) = _Initial;
 
-  factory GetInventoryState.initial() => GetInventoryState(
-      isLoading: false, hasError: false, loadMore: false);
+  factory GetInventoryState.initial() =>
+      GetInventoryState(isLoading: false, hasError: false, loadMore: false);
 }
