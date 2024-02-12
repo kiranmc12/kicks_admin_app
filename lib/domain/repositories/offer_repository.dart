@@ -6,9 +6,9 @@ import 'package:kicks_sneakerapp/domain/models/offers/get_offer_response_model/g
 import 'package:kicks_sneakerapp/domain/models/sucess/sucess_model/sucess_model.dart';
 
 abstract class OfferRespository {
-  Future<Either<Failure, SucessModel>> addOffers({required AddOfferModel addOfferModel});
+  Future<Either<Failure, SucessModel>> addOffers(
+      {required AddOfferModel addOfferModel});
   Future<Either<Failure, GetOfferResponseModel>> getOffers();
   Future<Either<Failure, SucessModel>> deleteOffer(
       {required DeleteOfferQuery deleteOfferQuery});
-
 }

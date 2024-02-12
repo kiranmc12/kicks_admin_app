@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'datum.dart';
+import 'coupon.dart';
 
 part 'get_coupon_response_model.g.dart';
 
@@ -9,7 +9,7 @@ class GetCouponResponseModel {
   @JsonKey(name: 'status_code')
   int? statusCode;
   String? message;
-  List<Datum>? data;
+  List<Coupon>? data;
   dynamic error;
 
   GetCouponResponseModel({

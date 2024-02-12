@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'datum.dart';
+part of 'coupon.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
-      id: json['ID'] as int?,
+Coupon _$CouponFromJson(Map<String, dynamic> json) => Coupon(
+      couponId: json['ID'] as int?,
       createdAt: json['CreatedAt'] as String?,
       updatedAt: json['UpdatedAt'] as String?,
       deletedAt: json['DeletedAt'],
@@ -16,8 +16,8 @@ Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
       valid: json['valid'] as bool?,
     );
 
-Map<String, dynamic> _$DatumToJson(Datum instance) => <String, dynamic>{
-      'ID': instance.id,
+Map<String, dynamic> _$CouponToJson(Coupon instance) => <String, dynamic>{
+      'ID': instance.couponId,
       'CreatedAt': instance.createdAt,
       'UpdatedAt': instance.updatedAt,
       'DeletedAt': instance.deletedAt,

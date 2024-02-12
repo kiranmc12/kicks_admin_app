@@ -47,13 +47,14 @@ class CouponsBloc extends Bloc<CouponsEvent, CouponsState> {
     });
 
     on<_DeleteCoupon>((event, emit) async {
+      emit(state.copyWith(isLoding: true, hasError: false, isDone: false));
       final result = await couponApi.deleteCoupon(
           deleteCouponModel: event.deleteCouponModel);
       result.fold(
           (failure) => emit(state.copyWith(
               isLoding: false,
               hasError: true,
-              message: "cant deactivate coupon,something went wrong")),
+              message: "cant delete coupon,something went wrong")),
           (couponResponseModel) {
         emit(state.copyWith(
             isDone: true, message: "Coupon deactivated sucessfully"));

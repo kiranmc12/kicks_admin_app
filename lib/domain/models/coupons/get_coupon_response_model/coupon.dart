@@ -1,11 +1,11 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'datum.g.dart';
+part 'coupon.g.dart';
 
 @JsonSerializable()
-class Datum {
+class Coupon {
   @JsonKey(name: 'ID')
-  int? id;
+  int? couponId;
   @JsonKey(name: 'CreatedAt')
   String? createdAt;
   @JsonKey(name: 'UpdatedAt')
@@ -17,8 +17,8 @@ class Datum {
   int? discountRate;
   bool? valid;
 
-  Datum({
-    this.id,
+  Coupon({
+    this.couponId,
     this.createdAt,
     this.updatedAt,
     this.deletedAt,
@@ -27,7 +27,7 @@ class Datum {
     this.valid,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => _$DatumFromJson(json);
+  factory Coupon.fromJson(Map<String, dynamic> json) => _$CouponFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DatumToJson(this);
+  Map<String, dynamic> toJson() => _$CouponToJson(this);
 }

@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'datum.dart';
+import 'offers.dart';
 
 part 'get_offer_response_model.g.dart';
 
@@ -9,7 +9,7 @@ class GetOfferResponseModel {
   @JsonKey(name: 'status_code')
   int? statusCode;
   String? message;
-  List<Datum>? data;
+  List<Offers>? data;
   dynamic error;
 
   GetOfferResponseModel({

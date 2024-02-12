@@ -45,7 +45,6 @@ class _ScreenHomeState extends State<ScreenHome> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomSearchFieldWidget(),
               kHeight20,
               const InventoryGridViewWidget(),
               SizedBox(height: sWidth * 0.30)

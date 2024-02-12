@@ -24,7 +24,8 @@ class InventoryTile extends StatelessWidget {
           child: Stack(
             children: [
               Container(
-                height: sWidth * 0.5,
+                width: sWidth * 0.7,
+                height: sWidth * 0.48,
                 decoration: const BoxDecoration(
                   color: kGrey,
                   borderRadius: BorderRadius.all(kRadius10),
@@ -61,7 +62,7 @@ class InventoryTile extends StatelessWidget {
           inventory.productName!,
           overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.start,
-          style: roboto(fontWeight: FontWeight.bold, fontSize: 0.04),
+          style: roboto(fontSize: 0.035, fontWeight: FontWeight.w500),
         ),
         Row(
           mainAxisAlignment:
@@ -73,14 +74,15 @@ class InventoryTile extends StatelessWidget {
               children: [
                 Text(
                   '₹${inventory.discountedPrice!.roundToDouble()}',
-                  style: roboto(
+                  style: tektur(
+                    fontWeight: FontWeight.bold,
                     fontSize: 0.035,
-                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                const Text("₹4999",
-                    style: TextStyle(
-                        fontSize: 14, decoration: TextDecoration.lineThrough))
+                Text('₹${inventory.price!.roundToDouble()}',
+                    style: tektur(
+                        textdecoration: TextDecoration.lineThrough,
+                        fontSize: 0.03))
               ],
             ),
             const Spacer(),

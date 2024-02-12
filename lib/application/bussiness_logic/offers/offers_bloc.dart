@@ -16,6 +16,8 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
   final OfferRespository offerApi;
   OffersBloc(this.offerApi) : super(OffersState.initial()) {
     on<_GetOffers>((event, emit) async {
+      emit(state.copyWith(isLoading: true, hasError: false, isDone: false));
+
       final result = await offerApi.getOffers();
       result.fold(
           (failure) => emit(state.copyWith(
@@ -29,6 +31,8 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
     });
 
     on<_AddOffer>((event, emit) async {
+      emit(state.copyWith(isLoading: true, hasError: false, isDone: false));
+
       final result =
           await offerApi.addOffers(addOfferModel: event.addOfferModel);
       result.fold(
@@ -40,6 +44,7 @@ class OffersBloc extends Bloc<OffersEvent, OffersState> {
               isDone: true,
               hasError: false,
               message: "Offer added sucessfully")));
+      offerAmountController.text = "";
       add(const OffersEvent.getOffers());
     });
 

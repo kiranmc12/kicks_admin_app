@@ -20,7 +20,7 @@ class OfferApi implements OfferRespository {
   Future<Either<Failure, SucessModel>> deleteOffer(
       {required DeleteOfferQuery deleteOfferQuery}) async {
     try {
-      final response = await apiService.post(ApiEndpoints.coupon,
+      final response = await apiService.delete(ApiEndpoints.offer,
           queryParameters: deleteOfferQuery.toJson());
       if (response.statusCode == 200) {
         return Right(SucessModel.fromJson(response.data));
@@ -44,7 +44,7 @@ class OfferApi implements OfferRespository {
   Future<Either<Failure, GetOfferResponseModel>> getOffers() async {
     try {
       final response = await apiService.get(
-        ApiEndpoints.coupon,
+        ApiEndpoints.offer,
       );
       if (response.statusCode == 200) {
         return Right(GetOfferResponseModel.fromJson(response.data));
@@ -68,7 +68,7 @@ class OfferApi implements OfferRespository {
   Future<Either<Failure, SucessModel>> addOffers(
       {required AddOfferModel addOfferModel}) async {
     try {
-      final response = await apiService.post(ApiEndpoints.coupon,
+      final response = await apiService.post(ApiEndpoints.offer,
           data: addOfferModel.toJson());
       if (response.statusCode == 200) {
         return Right(SucessModel.fromJson(response.data));

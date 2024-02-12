@@ -54,24 +54,34 @@ ButtonStyle elevatedButtonStyleRed = ElevatedButton.styleFrom(
 );
 TextStyle roboto(
     {double fontSize = 0.035,
+    TextDecoration? textdecoration,
     FontWeight fontWeight = FontWeight.normal,
     Color color = kBlack}) {
   return GoogleFonts.roboto(
-      fontSize: fontSize * sWidth, fontWeight: fontWeight, color: color);
+      decoration: textdecoration,
+      fontSize: fontSize * sWidth,
+      fontWeight: fontWeight,
+      color: color);
 }
 
 TextStyle tektur(
     {double fontSize = 0.035,
     FontWeight fontWeight = FontWeight.normal,
+    TextDecoration? textdecoration,
     Color color = kBlack}) {
   return GoogleFonts.tektur(
-      fontSize: fontSize * sWidth, fontWeight: fontWeight, color: color);
+      decoration: textdecoration,
+      fontSize: fontSize * sWidth,
+      fontWeight: fontWeight,
+      color: color);
 }
 
 void sizeFinder(BuildContext context) {
   final size = MediaQuery.of(context).size;
   sHeight = size.height;
   sWidth = size.width;
+  print(sHeight);
+  print(sWidth);
 }
 
 TextStyle priceStyle =
