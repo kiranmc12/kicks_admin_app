@@ -71,7 +71,9 @@ class _ScreenBottombarState extends State<ScreenBottombar>
                   CircleAvatar(
                     backgroundColor: kGrey,
                     child: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, Routes.ordersScreen);
+                      },
                       icon: const Icon(EvaIcons.shopping_cart_outline),
                     ),
                   ),

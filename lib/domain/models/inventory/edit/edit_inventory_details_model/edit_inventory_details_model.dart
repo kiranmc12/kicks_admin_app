@@ -5,7 +5,7 @@ part 'edit_inventory_details_model.g.dart';
 @JsonSerializable()
 class EditInventoryDetailsModel {
   String? name;
-  double? price;
+  int? price;
   @JsonKey(name: 'category_id')
   int? categoryId;
   String? size;

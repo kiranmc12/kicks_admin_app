@@ -48,7 +48,7 @@ class UsersApi implements UserRepository {
           queryParameters: getUsersQuery.toJson());
       print(response.data);
       if (response.statusCode == 200) {
-      return Right(UsersResponseModel.fromJson(response.data));
+        return Right(UsersResponseModel.fromJson(response.data));
       } else {
         return Left(Failure(
             message: UsersResponseModel.fromJson(response.data).message!));

@@ -4,7 +4,9 @@ import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/edit_inve
 import 'package:kicks_sneakerapp/application/presentation/screens/edit_invenotry/widgets/edit_image_tile.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/edit_invenotry/widgets/other_details.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/edit_invenotry/widgets/stock_updater_widget.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/show_dialog/show_dialog.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/delete/delete_inventory_model/delete_inventory_model.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/get/get_inventory_response_model/datum.dart';
 
@@ -36,18 +38,27 @@ class ScreenEditInventory extends StatelessWidget {
               kHeight10,
               Text(inventory.productName!),
               kHeight10,
+              OtherDetails(inventory: inventory),
+              kHeight10,
               StockUpdaterWidget(inventory: inventory),
               kHeight10,
-              OtherDetails(inventory: inventory),
+              
               ElevatedButton(
-                onPressed: () {
-                  context.read<EditInventoryBloc>().add(
-                      EditInventoryEvent.deleteInventory(
-                          deleteInventoryQuery:
-                              DeleteInventoryModel(id: inventory.id!)));
+                onPressed: () async {
+                  void onDeleteBrand() async {
+                    context.read<EditInventoryBloc>().add(
+                        EditInventoryEvent.deleteInventory(
+                            deleteInventoryQuery:
+                                DeleteInventoryModel(id: inventory.id!)));
+                  }
+
+                  await customShowDialog(
+                    context: context,
+                    onPress: onDeleteBrand,
+                  );
                 },
                 style: elevatedButtonStyleRed,
-                child: const Text('Delete Invontory'),
+                child:  Text('Delete Invontory',style: tektur(color: kWhite,fontWeight: FontWeight.bold),),
               ),
             ],
           ),

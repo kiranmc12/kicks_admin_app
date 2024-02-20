@@ -26,6 +26,10 @@ mixin _$EditInventoryEvent {
     required TResult Function() decrementQuantity,
     required TResult Function(UpdateImageQuery updateInventoryImageQurrey)
         updateImage,
+    required TResult Function(
+            EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)
+        editAllOtherDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +41,9 @@ mixin _$EditInventoryEvent {
     TResult? Function()? incrementQuantity,
     TResult? Function()? decrementQuantity,
     TResult? Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult? Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +55,9 @@ mixin _$EditInventoryEvent {
     TResult Function()? incrementQuantity,
     TResult Function()? decrementQuantity,
     TResult Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +69,7 @@ mixin _$EditInventoryEvent {
     required TResult Function(_IncrementQuantity value) incrementQuantity,
     required TResult Function(_DecrementQuantity value) decrementQuantity,
     required TResult Function(_UpdateImage value) updateImage,
+    required TResult Function(_editOtherDetails value) editAllOtherDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +80,7 @@ mixin _$EditInventoryEvent {
     TResult? Function(_IncrementQuantity value)? incrementQuantity,
     TResult? Function(_DecrementQuantity value)? decrementQuantity,
     TResult? Function(_UpdateImage value)? updateImage,
+    TResult? Function(_editOtherDetails value)? editAllOtherDetails,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,6 +91,7 @@ mixin _$EditInventoryEvent {
     TResult Function(_IncrementQuantity value)? incrementQuantity,
     TResult Function(_DecrementQuantity value)? decrementQuantity,
     TResult Function(_UpdateImage value)? updateImage,
+    TResult Function(_editOtherDetails value)? editAllOtherDetails,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -182,6 +195,10 @@ class _$SetStockImpl implements _SetStock {
     required TResult Function() decrementQuantity,
     required TResult Function(UpdateImageQuery updateInventoryImageQurrey)
         updateImage,
+    required TResult Function(
+            EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)
+        editAllOtherDetails,
   }) {
     return setStock(stock, image);
   }
@@ -196,6 +213,9 @@ class _$SetStockImpl implements _SetStock {
     TResult? Function()? incrementQuantity,
     TResult? Function()? decrementQuantity,
     TResult? Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult? Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
   }) {
     return setStock?.call(stock, image);
   }
@@ -210,6 +230,9 @@ class _$SetStockImpl implements _SetStock {
     TResult Function()? incrementQuantity,
     TResult Function()? decrementQuantity,
     TResult Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (setStock != null) {
@@ -227,6 +250,7 @@ class _$SetStockImpl implements _SetStock {
     required TResult Function(_IncrementQuantity value) incrementQuantity,
     required TResult Function(_DecrementQuantity value) decrementQuantity,
     required TResult Function(_UpdateImage value) updateImage,
+    required TResult Function(_editOtherDetails value) editAllOtherDetails,
   }) {
     return setStock(this);
   }
@@ -240,6 +264,7 @@ class _$SetStockImpl implements _SetStock {
     TResult? Function(_IncrementQuantity value)? incrementQuantity,
     TResult? Function(_DecrementQuantity value)? decrementQuantity,
     TResult? Function(_UpdateImage value)? updateImage,
+    TResult? Function(_editOtherDetails value)? editAllOtherDetails,
   }) {
     return setStock?.call(this);
   }
@@ -253,6 +278,7 @@ class _$SetStockImpl implements _SetStock {
     TResult Function(_IncrementQuantity value)? incrementQuantity,
     TResult Function(_DecrementQuantity value)? decrementQuantity,
     TResult Function(_UpdateImage value)? updateImage,
+    TResult Function(_editOtherDetails value)? editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (setStock != null) {
@@ -346,6 +372,10 @@ class _$AddStockImpl implements _AddStock {
     required TResult Function() decrementQuantity,
     required TResult Function(UpdateImageQuery updateInventoryImageQurrey)
         updateImage,
+    required TResult Function(
+            EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)
+        editAllOtherDetails,
   }) {
     return addStock(updateStockModel);
   }
@@ -360,6 +390,9 @@ class _$AddStockImpl implements _AddStock {
     TResult? Function()? incrementQuantity,
     TResult? Function()? decrementQuantity,
     TResult? Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult? Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
   }) {
     return addStock?.call(updateStockModel);
   }
@@ -374,6 +407,9 @@ class _$AddStockImpl implements _AddStock {
     TResult Function()? incrementQuantity,
     TResult Function()? decrementQuantity,
     TResult Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (addStock != null) {
@@ -391,6 +427,7 @@ class _$AddStockImpl implements _AddStock {
     required TResult Function(_IncrementQuantity value) incrementQuantity,
     required TResult Function(_DecrementQuantity value) decrementQuantity,
     required TResult Function(_UpdateImage value) updateImage,
+    required TResult Function(_editOtherDetails value) editAllOtherDetails,
   }) {
     return addStock(this);
   }
@@ -404,6 +441,7 @@ class _$AddStockImpl implements _AddStock {
     TResult? Function(_IncrementQuantity value)? incrementQuantity,
     TResult? Function(_DecrementQuantity value)? decrementQuantity,
     TResult? Function(_UpdateImage value)? updateImage,
+    TResult? Function(_editOtherDetails value)? editAllOtherDetails,
   }) {
     return addStock?.call(this);
   }
@@ -417,6 +455,7 @@ class _$AddStockImpl implements _AddStock {
     TResult Function(_IncrementQuantity value)? incrementQuantity,
     TResult Function(_DecrementQuantity value)? decrementQuantity,
     TResult Function(_UpdateImage value)? updateImage,
+    TResult Function(_editOtherDetails value)? editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (addStock != null) {
@@ -510,6 +549,10 @@ class _$DeleteInventoryImpl implements _DeleteInventory {
     required TResult Function() decrementQuantity,
     required TResult Function(UpdateImageQuery updateInventoryImageQurrey)
         updateImage,
+    required TResult Function(
+            EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)
+        editAllOtherDetails,
   }) {
     return deleteInventory(deleteInventoryQuery);
   }
@@ -524,6 +567,9 @@ class _$DeleteInventoryImpl implements _DeleteInventory {
     TResult? Function()? incrementQuantity,
     TResult? Function()? decrementQuantity,
     TResult? Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult? Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
   }) {
     return deleteInventory?.call(deleteInventoryQuery);
   }
@@ -538,6 +584,9 @@ class _$DeleteInventoryImpl implements _DeleteInventory {
     TResult Function()? incrementQuantity,
     TResult Function()? decrementQuantity,
     TResult Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (deleteInventory != null) {
@@ -555,6 +604,7 @@ class _$DeleteInventoryImpl implements _DeleteInventory {
     required TResult Function(_IncrementQuantity value) incrementQuantity,
     required TResult Function(_DecrementQuantity value) decrementQuantity,
     required TResult Function(_UpdateImage value) updateImage,
+    required TResult Function(_editOtherDetails value) editAllOtherDetails,
   }) {
     return deleteInventory(this);
   }
@@ -568,6 +618,7 @@ class _$DeleteInventoryImpl implements _DeleteInventory {
     TResult? Function(_IncrementQuantity value)? incrementQuantity,
     TResult? Function(_DecrementQuantity value)? decrementQuantity,
     TResult? Function(_UpdateImage value)? updateImage,
+    TResult? Function(_editOtherDetails value)? editAllOtherDetails,
   }) {
     return deleteInventory?.call(this);
   }
@@ -581,6 +632,7 @@ class _$DeleteInventoryImpl implements _DeleteInventory {
     TResult Function(_IncrementQuantity value)? incrementQuantity,
     TResult Function(_DecrementQuantity value)? decrementQuantity,
     TResult Function(_UpdateImage value)? updateImage,
+    TResult Function(_editOtherDetails value)? editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (deleteInventory != null) {
@@ -647,6 +699,10 @@ class _$IncrementQuantityImpl implements _IncrementQuantity {
     required TResult Function() decrementQuantity,
     required TResult Function(UpdateImageQuery updateInventoryImageQurrey)
         updateImage,
+    required TResult Function(
+            EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)
+        editAllOtherDetails,
   }) {
     return incrementQuantity();
   }
@@ -661,6 +717,9 @@ class _$IncrementQuantityImpl implements _IncrementQuantity {
     TResult? Function()? incrementQuantity,
     TResult? Function()? decrementQuantity,
     TResult? Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult? Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
   }) {
     return incrementQuantity?.call();
   }
@@ -675,6 +734,9 @@ class _$IncrementQuantityImpl implements _IncrementQuantity {
     TResult Function()? incrementQuantity,
     TResult Function()? decrementQuantity,
     TResult Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (incrementQuantity != null) {
@@ -692,6 +754,7 @@ class _$IncrementQuantityImpl implements _IncrementQuantity {
     required TResult Function(_IncrementQuantity value) incrementQuantity,
     required TResult Function(_DecrementQuantity value) decrementQuantity,
     required TResult Function(_UpdateImage value) updateImage,
+    required TResult Function(_editOtherDetails value) editAllOtherDetails,
   }) {
     return incrementQuantity(this);
   }
@@ -705,6 +768,7 @@ class _$IncrementQuantityImpl implements _IncrementQuantity {
     TResult? Function(_IncrementQuantity value)? incrementQuantity,
     TResult? Function(_DecrementQuantity value)? decrementQuantity,
     TResult? Function(_UpdateImage value)? updateImage,
+    TResult? Function(_editOtherDetails value)? editAllOtherDetails,
   }) {
     return incrementQuantity?.call(this);
   }
@@ -718,6 +782,7 @@ class _$IncrementQuantityImpl implements _IncrementQuantity {
     TResult Function(_IncrementQuantity value)? incrementQuantity,
     TResult Function(_DecrementQuantity value)? decrementQuantity,
     TResult Function(_UpdateImage value)? updateImage,
+    TResult Function(_editOtherDetails value)? editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (incrementQuantity != null) {
@@ -777,6 +842,10 @@ class _$DecrementQuantityImpl implements _DecrementQuantity {
     required TResult Function() decrementQuantity,
     required TResult Function(UpdateImageQuery updateInventoryImageQurrey)
         updateImage,
+    required TResult Function(
+            EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)
+        editAllOtherDetails,
   }) {
     return decrementQuantity();
   }
@@ -791,6 +860,9 @@ class _$DecrementQuantityImpl implements _DecrementQuantity {
     TResult? Function()? incrementQuantity,
     TResult? Function()? decrementQuantity,
     TResult? Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult? Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
   }) {
     return decrementQuantity?.call();
   }
@@ -805,6 +877,9 @@ class _$DecrementQuantityImpl implements _DecrementQuantity {
     TResult Function()? incrementQuantity,
     TResult Function()? decrementQuantity,
     TResult Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (decrementQuantity != null) {
@@ -822,6 +897,7 @@ class _$DecrementQuantityImpl implements _DecrementQuantity {
     required TResult Function(_IncrementQuantity value) incrementQuantity,
     required TResult Function(_DecrementQuantity value) decrementQuantity,
     required TResult Function(_UpdateImage value) updateImage,
+    required TResult Function(_editOtherDetails value) editAllOtherDetails,
   }) {
     return decrementQuantity(this);
   }
@@ -835,6 +911,7 @@ class _$DecrementQuantityImpl implements _DecrementQuantity {
     TResult? Function(_IncrementQuantity value)? incrementQuantity,
     TResult? Function(_DecrementQuantity value)? decrementQuantity,
     TResult? Function(_UpdateImage value)? updateImage,
+    TResult? Function(_editOtherDetails value)? editAllOtherDetails,
   }) {
     return decrementQuantity?.call(this);
   }
@@ -848,6 +925,7 @@ class _$DecrementQuantityImpl implements _DecrementQuantity {
     TResult Function(_IncrementQuantity value)? incrementQuantity,
     TResult Function(_DecrementQuantity value)? decrementQuantity,
     TResult Function(_UpdateImage value)? updateImage,
+    TResult Function(_editOtherDetails value)? editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (decrementQuantity != null) {
@@ -936,6 +1014,10 @@ class _$UpdateImageImpl implements _UpdateImage {
     required TResult Function() decrementQuantity,
     required TResult Function(UpdateImageQuery updateInventoryImageQurrey)
         updateImage,
+    required TResult Function(
+            EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)
+        editAllOtherDetails,
   }) {
     return updateImage(updateInventoryImageQurrey);
   }
@@ -950,6 +1032,9 @@ class _$UpdateImageImpl implements _UpdateImage {
     TResult? Function()? incrementQuantity,
     TResult? Function()? decrementQuantity,
     TResult? Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult? Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
   }) {
     return updateImage?.call(updateInventoryImageQurrey);
   }
@@ -964,6 +1049,9 @@ class _$UpdateImageImpl implements _UpdateImage {
     TResult Function()? incrementQuantity,
     TResult Function()? decrementQuantity,
     TResult Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (updateImage != null) {
@@ -981,6 +1069,7 @@ class _$UpdateImageImpl implements _UpdateImage {
     required TResult Function(_IncrementQuantity value) incrementQuantity,
     required TResult Function(_DecrementQuantity value) decrementQuantity,
     required TResult Function(_UpdateImage value) updateImage,
+    required TResult Function(_editOtherDetails value) editAllOtherDetails,
   }) {
     return updateImage(this);
   }
@@ -994,6 +1083,7 @@ class _$UpdateImageImpl implements _UpdateImage {
     TResult? Function(_IncrementQuantity value)? incrementQuantity,
     TResult? Function(_DecrementQuantity value)? decrementQuantity,
     TResult? Function(_UpdateImage value)? updateImage,
+    TResult? Function(_editOtherDetails value)? editAllOtherDetails,
   }) {
     return updateImage?.call(this);
   }
@@ -1007,6 +1097,7 @@ class _$UpdateImageImpl implements _UpdateImage {
     TResult Function(_IncrementQuantity value)? incrementQuantity,
     TResult Function(_DecrementQuantity value)? decrementQuantity,
     TResult Function(_UpdateImage value)? updateImage,
+    TResult Function(_editOtherDetails value)? editAllOtherDetails,
     required TResult orElse(),
   }) {
     if (updateImage != null) {
@@ -1024,6 +1115,205 @@ abstract class _UpdateImage implements EditInventoryEvent {
   UpdateImageQuery get updateInventoryImageQurrey;
   @JsonKey(ignore: true)
   _$$UpdateImageImplCopyWith<_$UpdateImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$editOtherDetailsImplCopyWith<$Res> {
+  factory _$$editOtherDetailsImplCopyWith(_$editOtherDetailsImpl value,
+          $Res Function(_$editOtherDetailsImpl) then) =
+      __$$editOtherDetailsImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {EditInventoryDetailsModel editInventoryDetailsModel,
+      EditInventoryDetailsQuery editInventoryDetailsQuery});
+}
+
+/// @nodoc
+class __$$editOtherDetailsImplCopyWithImpl<$Res>
+    extends _$EditInventoryEventCopyWithImpl<$Res, _$editOtherDetailsImpl>
+    implements _$$editOtherDetailsImplCopyWith<$Res> {
+  __$$editOtherDetailsImplCopyWithImpl(_$editOtherDetailsImpl _value,
+      $Res Function(_$editOtherDetailsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? editInventoryDetailsModel = null,
+    Object? editInventoryDetailsQuery = null,
+  }) {
+    return _then(_$editOtherDetailsImpl(
+      editInventoryDetailsModel: null == editInventoryDetailsModel
+          ? _value.editInventoryDetailsModel
+          : editInventoryDetailsModel // ignore: cast_nullable_to_non_nullable
+              as EditInventoryDetailsModel,
+      editInventoryDetailsQuery: null == editInventoryDetailsQuery
+          ? _value.editInventoryDetailsQuery
+          : editInventoryDetailsQuery // ignore: cast_nullable_to_non_nullable
+              as EditInventoryDetailsQuery,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$editOtherDetailsImpl implements _editOtherDetails {
+  const _$editOtherDetailsImpl(
+      {required this.editInventoryDetailsModel,
+      required this.editInventoryDetailsQuery});
+
+  @override
+  final EditInventoryDetailsModel editInventoryDetailsModel;
+  @override
+  final EditInventoryDetailsQuery editInventoryDetailsQuery;
+
+  @override
+  String toString() {
+    return 'EditInventoryEvent.editAllOtherDetails(editInventoryDetailsModel: $editInventoryDetailsModel, editInventoryDetailsQuery: $editInventoryDetailsQuery)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$editOtherDetailsImpl &&
+            (identical(other.editInventoryDetailsModel,
+                    editInventoryDetailsModel) ||
+                other.editInventoryDetailsModel == editInventoryDetailsModel) &&
+            (identical(other.editInventoryDetailsQuery,
+                    editInventoryDetailsQuery) ||
+                other.editInventoryDetailsQuery == editInventoryDetailsQuery));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, editInventoryDetailsModel, editInventoryDetailsQuery);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$editOtherDetailsImplCopyWith<_$editOtherDetailsImpl> get copyWith =>
+      __$$editOtherDetailsImplCopyWithImpl<_$editOtherDetailsImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int stock, String image) setStock,
+    required TResult Function(UpdateStockModel updateStockModel) addStock,
+    required TResult Function(DeleteInventoryModel deleteInventoryQuery)
+        deleteInventory,
+    required TResult Function() incrementQuantity,
+    required TResult Function() decrementQuantity,
+    required TResult Function(UpdateImageQuery updateInventoryImageQurrey)
+        updateImage,
+    required TResult Function(
+            EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)
+        editAllOtherDetails,
+  }) {
+    return editAllOtherDetails(
+        editInventoryDetailsModel, editInventoryDetailsQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int stock, String image)? setStock,
+    TResult? Function(UpdateStockModel updateStockModel)? addStock,
+    TResult? Function(DeleteInventoryModel deleteInventoryQuery)?
+        deleteInventory,
+    TResult? Function()? incrementQuantity,
+    TResult? Function()? decrementQuantity,
+    TResult? Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult? Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
+  }) {
+    return editAllOtherDetails?.call(
+        editInventoryDetailsModel, editInventoryDetailsQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int stock, String image)? setStock,
+    TResult Function(UpdateStockModel updateStockModel)? addStock,
+    TResult Function(DeleteInventoryModel deleteInventoryQuery)?
+        deleteInventory,
+    TResult Function()? incrementQuantity,
+    TResult Function()? decrementQuantity,
+    TResult Function(UpdateImageQuery updateInventoryImageQurrey)? updateImage,
+    TResult Function(EditInventoryDetailsModel editInventoryDetailsModel,
+            EditInventoryDetailsQuery editInventoryDetailsQuery)?
+        editAllOtherDetails,
+    required TResult orElse(),
+  }) {
+    if (editAllOtherDetails != null) {
+      return editAllOtherDetails(
+          editInventoryDetailsModel, editInventoryDetailsQuery);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SetStock value) setStock,
+    required TResult Function(_AddStock value) addStock,
+    required TResult Function(_DeleteInventory value) deleteInventory,
+    required TResult Function(_IncrementQuantity value) incrementQuantity,
+    required TResult Function(_DecrementQuantity value) decrementQuantity,
+    required TResult Function(_UpdateImage value) updateImage,
+    required TResult Function(_editOtherDetails value) editAllOtherDetails,
+  }) {
+    return editAllOtherDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SetStock value)? setStock,
+    TResult? Function(_AddStock value)? addStock,
+    TResult? Function(_DeleteInventory value)? deleteInventory,
+    TResult? Function(_IncrementQuantity value)? incrementQuantity,
+    TResult? Function(_DecrementQuantity value)? decrementQuantity,
+    TResult? Function(_UpdateImage value)? updateImage,
+    TResult? Function(_editOtherDetails value)? editAllOtherDetails,
+  }) {
+    return editAllOtherDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SetStock value)? setStock,
+    TResult Function(_AddStock value)? addStock,
+    TResult Function(_DeleteInventory value)? deleteInventory,
+    TResult Function(_IncrementQuantity value)? incrementQuantity,
+    TResult Function(_DecrementQuantity value)? decrementQuantity,
+    TResult Function(_UpdateImage value)? updateImage,
+    TResult Function(_editOtherDetails value)? editAllOtherDetails,
+    required TResult orElse(),
+  }) {
+    if (editAllOtherDetails != null) {
+      return editAllOtherDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _editOtherDetails implements EditInventoryEvent {
+  const factory _editOtherDetails(
+          {required final EditInventoryDetailsModel editInventoryDetailsModel,
+          required final EditInventoryDetailsQuery editInventoryDetailsQuery}) =
+      _$editOtherDetailsImpl;
+
+  EditInventoryDetailsModel get editInventoryDetailsModel;
+  EditInventoryDetailsQuery get editInventoryDetailsQuery;
+  @JsonKey(ignore: true)
+  _$$editOtherDetailsImplCopyWith<_$editOtherDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

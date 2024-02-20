@@ -4,6 +4,7 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/users/users_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/show_dialog/show_dialog.dart';
 import 'package:kicks_sneakerapp/domain/models/users/block_unblock_user_query/block_unblock_user_query.dart';
 import 'package:kicks_sneakerapp/domain/models/users/get_users_response_model/user.dart';
 
@@ -61,24 +62,40 @@ class UserTileWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         if (!user.blockStatus!) {
-                          context.read<UsersBloc>().add(UsersEvent.blockUser(
-                              blockUnblockUserQurrey:
-                                  BlockUnblockUserQuery(id: user.id)));
+                          void blockUser() async {
+                            context.read<UsersBloc>().add(UsersEvent.blockUser(
+                                blockUnblockUserQurrey:
+                                    BlockUnblockUserQuery(id: user.id)));
+                          }
+
+                          await customShowDialog(
+                            context: context,
+                            onPress: blockUser,
+                          );
                         }
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: user.blockStatus!
-                              ? kRed.withOpacity(0.3)
-                              : kRed),
-                      child: const Text("Block")),
+                          backgroundColor:
+                              user.blockStatus! ? kRed.withOpacity(0.3) : kRed),
+                      child: Text(
+                        "Block",
+                        style:
+                            roboto(color: kWhite, fontWeight: FontWeight.bold),
+                      )),
                   ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         if (user.blockStatus!) {
-                          context.read<UsersBloc>().add(UsersEvent.unBlockUser(
-                              blockUnblockUserQurrey:
-                                  BlockUnblockUserQuery(id: user.id)));
+                          void unblock() async {
+                            context.read<UsersBloc>().add(
+                                UsersEvent.unBlockUser(
+                                    blockUnblockUserQurrey:
+                                        BlockUnblockUserQuery(id: user.id)));
+                          }
+
+                          await customShowDialog(
+                              context: context, onPress: unblock);
                         }
                       },
                       style: ElevatedButton.styleFrom(
@@ -86,7 +103,11 @@ class UserTileWidget extends StatelessWidget {
                               ? kGreen.withOpacity(0.3)
                               : kGreen,
                           foregroundColor: kWhite),
-                      child: const Text("Unblock"))
+                      child: Text(
+                        "Unblock",
+                        style:
+                            roboto(color: kWhite, fontWeight: FontWeight.bold),
+                      ))
                 ],
               )
             ],

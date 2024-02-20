@@ -30,7 +30,7 @@ class ScreenUsers extends StatelessWidget {
         Expanded(
             child: BlocConsumer<UsersBloc, UsersState>(
           listener: (context, state) {
-            if (state.isBlocked || state.isUnBlocked || state.hasEroor ) {
+            if (state.isBlocked || state.isUnBlocked || state.hasEroor) {
               showSnack(
                   context: context,
                   message: state.message!,
@@ -41,9 +41,7 @@ class ScreenUsers extends StatelessWidget {
             print(state.userList);
             if (state.isLoading) {
               return const LoadingAnimation(width: 0.29);
-            } else if (
-                state.userList != null &&
-                state.userList!.isNotEmpty) {
+            } else if (state.userList != null && state.userList!.isNotEmpty) {
               return ListView.separated(
                   shrinkWrap: true,
                   itemBuilder: (context, index) {

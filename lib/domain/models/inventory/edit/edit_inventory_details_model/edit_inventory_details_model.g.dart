@@ -10,7 +10,7 @@ EditInventoryDetailsModel _$EditInventoryDetailsModelFromJson(
         Map<String, dynamic> json) =>
     EditInventoryDetailsModel(
       name: json['name'] as String?,
-      price: (json['price'] as num?)?.toDouble(),
+      price: json['price'] as int?,
       categoryId: json['category_id'] as int?,
       size: json['size'] as String?,
     );

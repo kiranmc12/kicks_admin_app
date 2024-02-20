@@ -23,7 +23,12 @@ class StockUpdaterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('Available Stock:'),
+        
+        Row(
+          children: [
+            Column(
+              children: [
+const Text('Available Stock:'),
         BlocConsumer<EditInventoryBloc, EditInventoryState>(
           listener: (context, state) {
             if (state.hasError || state.isUpdated) {
@@ -39,7 +44,8 @@ class StockUpdaterWidget extends StatelessWidget {
               Navigator.pop(context);
             } else if (state.stock > inventory.stock!) {
               showSnack(
-                  context: context, message: state.message!, color: kGreen);
+                  context: context,
+                   message: state.message!, color: kGreen);
             }
           },
           builder: (context, state) {
@@ -50,11 +56,7 @@ class StockUpdaterWidget extends StatelessWidget {
           },
         ),
         kHeight10,
-        Row(
-          children: [
-            const Text(
-              "Add Quantity",
-              style: headStyle,
+              ],
             ),
             kWidth30,
             IconButton(
@@ -85,25 +87,28 @@ class StockUpdaterWidget extends StatelessWidget {
           ],
         ),
         kHeight10,
-        ElevatedButton(
-          onPressed: () {
-            if (context
-                .read<EditInventoryBloc>()
-                .stockformKey
-                .currentState!
-                .validate()) {
-              context.read<EditInventoryBloc>().add(EditInventoryEvent.addStock(
-                  updateStockModel: UpdateStockModel(
-                      productId: inventory.id!,
-                      stock: int.parse(context
-                          .read<EditInventoryBloc>()
-                          .stockUpdateController
-                          .text
-                          .trim()))));
-            }
-          },
-          style: elevatedButtonStyleBlack,
-          child: const Text('Update Inventory Stock'),
+        Align(
+          alignment: Alignment.centerRight,
+          child: ElevatedButton(
+            onPressed: () {
+              if (context
+                  .read<EditInventoryBloc>()
+                  .stockformKey
+                  .currentState!
+                  .validate()) {
+                context.read<EditInventoryBloc>().add(EditInventoryEvent.addStock(
+                    updateStockModel: UpdateStockModel(
+                        productId: inventory.id!,
+                        stock: int.parse(context
+                            .read<EditInventoryBloc>()
+                            .stockUpdateController
+                            .text
+                            .trim()))));
+              }
+            },
+            style: elevatedButtonStyleBlack,
+            child: const Text('Update Inventory Stock'),
+          ),
         ),
       ],
     );

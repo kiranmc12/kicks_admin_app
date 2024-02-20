@@ -3,6 +3,8 @@ import 'package:kicks_sneakerapp/application/presentation/routes/routes.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/bottom_navbar/bottom_navbar.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/edit_invenotry/edit_inventory.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/home/home_screen.dart';
+import 'package:kicks_sneakerapp/application/presentation/screens/orders/orders_screen.dart';
+import 'package:kicks_sneakerapp/application/presentation/screens/orders/widgets/screen_order_details.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/sign_in/sign_in.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/splash_screen/splash_screen.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/get/get_inventory_response_model/datum.dart';
@@ -23,6 +25,13 @@ class RouteGenerator {
         return arguments is Inventory
             ? MaterialPageRoute(
                 builder: (ctx) => ScreenEditInventory(inventory: arguments))
+            : _errorScreen();
+                  case Routes.ordersScreen:
+        return MaterialPageRoute(builder: (ctx) => const ScreenOrders());
+           case Routes.orderDetailScreen:
+        return arguments is int
+            ? MaterialPageRoute(
+                builder: (ctx) => ScreenOrderDetail(orderId: arguments))
             : _errorScreen();
       default:
         return _errorScreen();

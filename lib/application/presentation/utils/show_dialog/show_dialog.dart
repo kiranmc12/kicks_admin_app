@@ -4,7 +4,7 @@ import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
 
 Future<dynamic> customShowDialog(
-    {required BuildContext context, required Function onPress}) {
+    {required BuildContext context, Title? title, required Function onPress}) {
   return showDialog(
       context: context,
       builder: (context) => AlertDialog(

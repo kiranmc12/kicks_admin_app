@@ -12,4 +12,7 @@ class EditInventoryEvent with _$EditInventoryEvent {
   const factory EditInventoryEvent.decrementQuantity() = _DecrementQuantity;
   const factory EditInventoryEvent.updateImage(
       {required UpdateImageQuery updateInventoryImageQurrey}) = _UpdateImage;
+        const factory EditInventoryEvent.editAllOtherDetails(
+      {required EditInventoryDetailsModel editInventoryDetailsModel,required EditInventoryDetailsQuery editInventoryDetailsQuery}) = _editOtherDetails;
+
 }

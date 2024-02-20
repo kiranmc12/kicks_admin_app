@@ -3,10 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/image_picker/image_picker.dart';
-import 'package:kicks_sneakerapp/data/services/inventory/inventory.dart';
-import 'package:kicks_sneakerapp/domain/core/error/Failure.dart';
-import 'package:kicks_sneakerapp/domain/models/brand/delete_brand_model/delete_brand_model.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/delete/delete_inventory_model/delete_inventory_model.dart';
+import 'package:kicks_sneakerapp/domain/models/inventory/edit/edit_inventory_details_model/edit_inventory_details_model.dart';
+import 'package:kicks_sneakerapp/domain/models/inventory/edit/edit_inventory_details_query.dart/edit_inventory_details_query.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/image/update_image_query/update_image_query.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/edit/update_stock_model/update_stock_model.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/image/image_model.dart';
@@ -20,6 +19,9 @@ class EditInventoryBloc extends Bloc<EditInventoryEvent, EditInventoryState> {
   final InventoryRepository inventoryRepositoryApi;
   final TextEditingController stockUpdateController =
       TextEditingController(text: '0');
+  final TextEditingController priceUpdateController = TextEditingController();
+  final TextEditingController sizeUpdateConttroller = TextEditingController();
+  final TextEditingController nameUpdateController = TextEditingController();
   final GlobalKey<FormState> stockformKey = GlobalKey<FormState>();
   EditInventoryBloc(this.inventoryRepositoryApi)
       : super(EditInventoryState.initial()) {
@@ -112,6 +114,31 @@ class EditInventoryBloc extends Bloc<EditInventoryEvent, EditInventoryState> {
       if (quantity > 0) {
         stockUpdateController.text = (quantity - 1).toString();
       }
+    });
+
+    on<_editOtherDetails>((event, emit) async {
+      emit(state.copyWith(isLoading: true, hasError: false, message: null));
+      final result = await inventoryRepositoryApi.editInventoryDetails(
+          editInventoryDetailsQuery: event.editInventoryDetailsQuery,
+          editInventoruDetailsModel: event.editInventoryDetailsModel);
+
+      result.fold((failuure) {
+        emit(state.copyWith(
+            hasError: true,
+            isLoading: false,
+            isDeleted: false,
+            message: failuure.message));
+      }, (response) {
+        nameUpdateController.clear();
+        priceUpdateController.clear();
+        sizeUpdateConttroller.clear();
+        emit(state.copyWith(
+            isUpdated: true,
+            isLoading: false,
+            isDeleted: false,
+            hasError: false,
+            message: response.message));
+      });
     });
   }
 }

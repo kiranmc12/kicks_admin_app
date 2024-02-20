@@ -9,6 +9,7 @@ import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/add_inven
 import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/edit_inventory/edit_inventory_bloc.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/get_inventory/get_inventory_bloc.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/offers/offers_bloc.dart';
+import 'package:kicks_sneakerapp/application/bussiness_logic/order/order_bloc.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/users/users_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/routes/route_generator.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
@@ -17,6 +18,7 @@ import 'package:kicks_sneakerapp/data/services/brands/brands.dart';
 import 'package:kicks_sneakerapp/data/services/coupon/coupons.dart';
 import 'package:kicks_sneakerapp/data/services/inventory/inventory.dart';
 import 'package:kicks_sneakerapp/data/services/offers/offers.dart';
+import 'package:kicks_sneakerapp/data/services/orders/orders.dart';
 import 'package:kicks_sneakerapp/data/services/users/users.dart';
 
 import 'application/presentation/routes/routes.dart';
@@ -43,7 +45,8 @@ class KicksAdmin extends StatelessWidget {
           BlocProvider(create: (context) => EditInventoryBloc(InventoryApi())),
           BlocProvider(create: (context) => CouponsBloc(CouponApi())),
           BlocProvider(create: (context) => OffersBloc(OfferApi())),
-          BlocProvider(create: (context) => UsersBloc(UsersApi()))
+          BlocProvider(create: (context) => UsersBloc(UsersApi())),
+          BlocProvider(create: (context) => OrderBloc(OrderApi()))
         ],
         child: MaterialApp(
           title: 'Flutter Demo',

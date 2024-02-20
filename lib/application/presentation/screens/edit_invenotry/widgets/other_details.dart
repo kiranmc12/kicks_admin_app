@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/edit_inventory/edit_inventory_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
+import 'package:kicks_sneakerapp/application/presentation/widgets/custom_textfield_widget.dart';
+import 'package:kicks_sneakerapp/domain/models/inventory/edit/edit_inventory_details_model/edit_inventory_details_model.dart';
+import 'package:kicks_sneakerapp/domain/models/inventory/edit/edit_inventory_details_query.dart/edit_inventory_details_query.dart';
 import 'package:kicks_sneakerapp/domain/models/inventory/get/get_inventory_response_model/datum.dart';
 
 class OtherDetails extends StatelessWidget {
@@ -14,13 +19,29 @@ class OtherDetails extends StatelessWidget {
         Row(
           children: [
             const Text(
+              'Name : ',
+              style: headStyle,
+            ),
+            CustomTextField(
+                width: sWidth * 0.50,
+                controller:
+                    context.read<EditInventoryBloc>().nameUpdateController,
+                hintText: inventory.productName!)
+          ],
+        ),
+        kHeight10,
+        Row(
+          children: [
+            const Text(
               'Size : ',
               style: headStyle,
             ),
-            Text(
-              inventory.size!,
-              style: priceStyle,
-            )
+            kWidth10,
+            CustomTextField(
+                width: sWidth * 0.50,
+                controller:
+                    context.read<EditInventoryBloc>().sizeUpdateConttroller,
+                hintText: inventory.size!)
           ],
         ),
         kHeight10,
@@ -30,10 +51,11 @@ class OtherDetails extends StatelessWidget {
               'Price : ',
               style: headStyle,
             ),
-            Text(
-              inventory.price.toString(),
-              style: priceStyle,
-            )
+            CustomTextField(
+                width: sWidth * 0.50,
+                controller:
+                    context.read<EditInventoryBloc>().priceUpdateController,
+                hintText: inventory.price.toString())
           ],
         ),
         kHeight10,
@@ -50,6 +72,25 @@ class OtherDetails extends StatelessWidget {
           ],
         ),
         kHeight10,
+        Align(
+          alignment: Alignment.centerRight,
+          child: ElevatedButton(
+              onPressed: () {
+                context
+                    .read<EditInventoryBloc>()
+                    .add(EditInventoryEvent.editAllOtherDetails(
+                        editInventoryDetailsModel: EditInventoryDetailsModel(
+                          categoryId: inventory.categoryId,
+                          name: context.read<EditInventoryBloc>().nameUpdateController.text.trim(),
+                          price:int.parse(context.read<EditInventoryBloc>().priceUpdateController.text.trim()),
+                          size: context.read<EditInventoryBloc>().sizeUpdateConttroller.text.trim()
+          
+                        ),
+                        editInventoryDetailsQuery: EditInventoryDetailsQuery(id:inventory.id )));
+              },
+              style: elevatedButtonStyle,
+              child: const Text("Edit")),
+        )
       ],
     );
   }
