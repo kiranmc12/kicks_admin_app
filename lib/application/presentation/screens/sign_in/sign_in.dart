@@ -5,6 +5,7 @@ import 'package:kicks_sneakerapp/application/presentation/routes/routes.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/sign_in/widgets/custom_textform_field.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/snackbar/snackbar.dart';
 import 'package:kicks_sneakerapp/domain/models/auth/login_model/login_model.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 
@@ -50,23 +51,23 @@ class ScreenSignIn extends StatelessWidget {
                     kHeight30,
                     BlocConsumer<AuthBloc, AuthState>(
                       listener: (context, state) {
-                        if (state.hasError) {
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            dismissDirection: DismissDirection.horizontal,
-                            content: Text(state.message!),
-                            backgroundColor: kBlack,
-                          ));
+                         if (state.hasError && state.message != null) {
+                           showSnack(
+                            context: context,
+                            message: state.message!,
+                            color: kRed);
                         }
 
-                        if (state.loginResponse != null) {
+                        if (state.loginResponse != null && state.message != null) {
                           Navigator.pushNamedAndRemoveUntil(
                               context, Routes.bottomNav, (route) => false);
 
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text(state.message!),
-                            backgroundColor: kGreen,
-                          ));
+                        showSnack(
+                            context: context,
+                            message: state.message!,
+                            color: kGreen);
                         }
+                     
                       },
                       builder: (context, state) {
                         if (state.isLoading) {

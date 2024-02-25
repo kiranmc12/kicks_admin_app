@@ -21,16 +21,17 @@ class ScreenOrders extends StatelessWidget {
               style: tektur(),
             ),
             centerTitle: true,
-            bottom: const TabBar(
-                labelStyle:
-                    TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+            bottom:  TabBar(
+              labelPadding: const EdgeInsets.all(0),
+                // labelStyle:
+                //     TextStyle( fontWeight: FontWeight.w500),
                 indicatorColor: kBlack,
                 tabs: [
-                  Tab(child: Text('Pending')),
-                  Tab(child: Text('Shipped')),
-                  Tab(child: Text('Deliverd')),
-                  Tab(child: Text('Returned')),
-                  Tab(child: Text('Canceled'))
+                  Tab(child: Text('Pending',style: roboto(fontSize: 0.03),)),
+                  Tab(child: Text('Shipped',style: roboto(fontSize: 0.03))),
+                  Tab(child: Text('Deliverd',style: roboto(fontSize: 0.03))),
+                  Tab(child: Text('Returned',style: roboto(fontSize: 0.03))),
+                  Tab(child: Text('Canceled',style: roboto(fontSize: 0.03)))
                 ]),
           ),
           body: BlocBuilder<OrderBloc, OrderState>(

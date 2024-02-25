@@ -22,10 +22,13 @@ class GetInventoryBloc extends Bloc<GetInventoryEvent, GetInventoryState> {
           getResponseQuery: GetResponseQuery(page: page));
       response.fold(
           (failure) => emit(state.copyWith(isLoading: false, hasError: true)),
-          (getInventoryResponseModel) => emit(state.copyWith(
+          (getInventoryResponseModel) {
+            emit(state.copyWith(
               isLoading: false,
               hasError: false,
-              inventories: getInventoryResponseModel.data)));
+              inventories: getInventoryResponseModel.data));
+              
+          });
     });
 
     on<_NextPage>((event, emit) async {

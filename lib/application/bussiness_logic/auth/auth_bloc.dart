@@ -29,6 +29,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(state.copyWith(
             hasError: true, isLoading: false, message: failure.message));
       }, (repsonseModel) async {
+        print(repsonseModel.message);
         emit(state.copyWith(
             isLoading: false,
             loginResponse: repsonseModel,

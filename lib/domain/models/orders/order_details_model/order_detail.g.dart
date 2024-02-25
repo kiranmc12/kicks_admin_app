@@ -13,7 +13,7 @@ OrderDetails _$OrderDetailsFromJson(Map<String, dynamic> json) => OrderDetails(
       products: (json['Products'] as List<dynamic>?)
           ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
           .toList(),
-      totalAmount: json['TotalAmount'] as int?,
+      totalAmount: (json['TotalAmount'] as num?)?.toDouble(),
       couponUsed: json['CouponUsed'] as String?,
       orderStatus: json['OrderStatus'] as String?,
       paymentStatus: json['PaymentStatus'] as String?,

@@ -6,7 +6,6 @@ import 'package:kicks_sneakerapp/domain/models/coupons/coupon_activate_query/cou
 import 'package:kicks_sneakerapp/domain/models/coupons/delete_coupon_model/delete_coupon_model.dart';
 import 'package:kicks_sneakerapp/domain/models/coupons/get_coupon_response_model/get_coupon_response_model.dart';
 import 'package:kicks_sneakerapp/domain/repositories/coupon_repository.dart';
-
 part 'coupons_event.dart';
 part 'coupons_state.dart';
 part 'coupons_bloc.freezed.dart';
@@ -19,15 +18,17 @@ class CouponsBloc extends Bloc<CouponsEvent, CouponsState> {
 
   CouponsBloc(this.couponApi) : super(CouponsState.initial()) {
     on<_GetCoupons>((event, emit) async {
+      emit(state.copyWith(isLoding: true, message: null));
       final result = await couponApi.getCoupon();
       result.fold(
           (failure) => emit(state.copyWith(
               isLoding: false,
               hasError: true,
               message: "Check connection and reload")),
-          (getCouponResponseModel) => emit(state.copyWith(
+          (getCouponResponseModel) => emit(state.copyWith( 
               isLoding: false,
               hasError: false,
+              message: null,
               getCouponResponseModel: getCouponResponseModel)));
     });
 
@@ -61,6 +62,8 @@ class CouponsBloc extends Bloc<CouponsEvent, CouponsState> {
         add(const CouponsEvent.getCoupons());
       });
     });
+
+
     on<_ActivateCoupon>((event, emit) async {
       final result = await couponApi.activateCoupon(
           couponActivateQurrey: event.couponActivateQuery);
@@ -69,7 +72,7 @@ class CouponsBloc extends Bloc<CouponsEvent, CouponsState> {
               isLoding: false,
               hasError: true,
               message: 'something went wrong')), (couponResponseModel) {
-        emit(state.copyWith(isDone: true, message: 'Activated susccssfully'));
+        emit(state.copyWith(isDone: true, message: 'Activated sucessfully'));
         add(const CouponsEvent.getCoupons());
       });
     });

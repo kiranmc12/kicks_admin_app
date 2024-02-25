@@ -14,7 +14,7 @@ class OffersState with _$OffersState {
       GetOfferResponseModel? getOfferResponseModel}) = _Initial;
 
   factory OffersState.initial() => const OffersState(
-      isLoading: true,
+      isLoading: false,
       showMessage: false,
       isAdding: false,
       hasError: false,

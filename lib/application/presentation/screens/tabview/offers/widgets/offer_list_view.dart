@@ -28,7 +28,7 @@ class OfferListView extends StatelessWidget {
         buildWhen: (previous, current) =>
             previous.getOfferResponseModel != current.getOfferResponseModel,
         builder: (context, state) {
-          if (state.getOfferResponseModel == null) {
+          if (state.getOfferResponseModel == null || state.getOfferResponseModel!.data==null) {
             return const Center(
               child: Text('Nothing to show'),
             );

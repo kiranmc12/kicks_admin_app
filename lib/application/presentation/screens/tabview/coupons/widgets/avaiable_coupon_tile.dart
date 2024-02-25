@@ -18,11 +18,13 @@ class AvailableCouponTile extends StatelessWidget {
     return Expanded(
       child: BlocConsumer<CouponsBloc, CouponsState>(
         listener: (context, state) {
-          if (state.hasError || state.isDone) {
-            showSnack(
-                context: context,
-                message: state.message!,
-                color: state.hasError ? kRed : kGreen);
+          if (state.message != null) {
+            if (state.hasError || state.isDone) {
+              showSnack(
+                  context: context,
+                  message: state.message!,
+                  color: state.hasError ? kRed : kGreen);
+            }
           }
         },
         buildWhen: (previous, current) =>

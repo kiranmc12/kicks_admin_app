@@ -24,8 +24,7 @@ class ApiAuth implements AuthRepository {
             Failure(message: LoginResponse.fromJson(response.data).message!));
       }
     } on DioException catch (dioError) {
-      log('dio error => ${dioError.message.toString()}');
-      return Left(Failure(message: dioError.response!.data['message']));
+      return Left(Failure(message: "Something went wrong"));
     } catch (e) {
       log('error => ${e.toString()}');
       return Left(Failure(message: e.toString()));

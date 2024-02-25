@@ -62,7 +62,7 @@ class ScreenAddSneakers extends StatelessWidget {
                   kHeight20,
                   const QuantityAdder(),
                   kHeight20,
-                  AddInventoryButton(),
+                  const AddInventoryButton(),
                   SizedBox(
                     height: sWidth * 0.30,
                   )

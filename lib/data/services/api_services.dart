@@ -1,6 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/data/shared_preferences/shared_pref.dart';
 import 'package:kicks_sneakerapp/domain/core/api_endpoints/api_endpoints.dart';
+import 'package:kicks_sneakerapp/domain/core/exceptions/dioexceptions.dart';
 
 class ApiService {
   final Dio dio;
@@ -28,6 +31,9 @@ class ApiService {
           await dio.get(url, data: data, queryParameters: queryParameters);
       return response;
     } on DioException catch (exception) {
+       final errorMessage = handleError(exception);
+
+      Fluttertoast.showToast(msg: errorMessage, backgroundColor: kRed);
       if (exception.response?.statusCode == 401) {
         await _refreshAccessToken();
         return await _retry(exception.requestOptions);
@@ -61,6 +67,9 @@ class ApiService {
       );
       return response;
     } on DioException catch (exception) {
+       final errorMessage = handleError(exception);
+
+      Fluttertoast.showToast(msg: errorMessage, backgroundColor: kRed);
       if (exception.response?.statusCode == 401) {
         await _refreshAccessToken();
         return await _retry(exception.requestOptions);
@@ -92,6 +101,9 @@ class ApiService {
           queryParameters: queryParameters);
       return response;
     } on DioException catch (exception) {
+       final errorMessage = handleError(exception);
+
+      Fluttertoast.showToast(msg: errorMessage, backgroundColor: kRed);
       if (exception.response?.statusCode == 401) {
         await _refreshAccessToken();
         return await _retry(exception.requestOptions);
@@ -122,6 +134,9 @@ class ApiService {
           await dio.delete(url, data: data, queryParameters: queryParameters);
       return response;
     } on DioException catch (exception) {
+       final errorMessage = handleError(exception);
+
+      Fluttertoast.showToast(msg: errorMessage, backgroundColor: kRed);
       if (exception.response?.statusCode == 401) {
         await _refreshAccessToken();
         return await _retry(exception.requestOptions);

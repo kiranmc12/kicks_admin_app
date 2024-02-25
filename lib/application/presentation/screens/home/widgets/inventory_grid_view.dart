@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/get_inventory/get_inventory_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/home/widgets/inventory_tile.dart';
-import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/loading_indicator/loading_indicator.dart';
-import 'package:kicks_sneakerapp/application/presentation/utils/snackbar/snackbar.dart';
 
 class InventoryGridViewWidget extends StatelessWidget {
   const InventoryGridViewWidget({
@@ -15,12 +13,7 @@ class InventoryGridViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<GetInventoryBloc, GetInventoryState>(
       listener: (context, state) {
-        if (state.hasError) {
-          showSnack(
-              context: context,
-              message: 'something went wrong, can\'t connect to server',
-              color: kRed);
-        }
+       
       },
       builder: (context, state) {
         if (state.isLoading) {
@@ -47,7 +40,7 @@ class InventoryGridViewWidget extends StatelessWidget {
                     : InventoryTile(inventory: state.inventories![index]),
           );
         } else {
-          return const Center(child: Text('no data avaliable '));
+          return const Center(child: Text('no data avaliable'));
         }
       },
     );

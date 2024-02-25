@@ -10,5 +10,5 @@ class GetInventoryState with _$GetInventoryState {
       List<Inventory>? inventories}) = _Initial;
 
   factory GetInventoryState.initial() =>
-      GetInventoryState(isLoading: false, hasError: false, loadMore: false);
+      const GetInventoryState(isLoading: false, hasError: false, loadMore: false);
 }

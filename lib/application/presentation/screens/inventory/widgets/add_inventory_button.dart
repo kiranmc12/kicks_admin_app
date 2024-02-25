@@ -89,7 +89,7 @@ class AddInventoryButton extends StatelessWidget {
             label: const Text("Add sneaker"),
             style: ElevatedButton.styleFrom(
                 side: const BorderSide(color: kWhite),
-                fixedSize: Size(sWidth * 0.40, sWidth * 0.10),
+                fixedSize: Size(sWidth * 0.50, sWidth * 0.10),
                 backgroundColor: kBlack,
                 foregroundColor: kWhite,
                 shape: const RoundedRectangleBorder(

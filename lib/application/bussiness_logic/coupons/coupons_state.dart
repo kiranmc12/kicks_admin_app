@@ -15,5 +15,6 @@ class CouponsState with _$CouponsState {
       hasError: false,
       isAdding: false,
       isDone: false,
+      message: null,
       showMessage: false);
 }

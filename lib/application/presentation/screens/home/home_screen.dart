@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/inventory/get_inventory/get_inventory_bloc.dart';
-import 'package:kicks_sneakerapp/application/presentation/screens/home/widgets/custom_search_field_widget.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/home/widgets/inventory_grid_view.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/constants.dart';
 
 class ScreenHome extends StatefulWidget {
-  const ScreenHome({Key? key});
+  const ScreenHome({super.key,});
 
   @override
   State<ScreenHome> createState() => _ScreenHomeState();

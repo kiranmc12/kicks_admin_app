@@ -25,6 +25,7 @@ import 'application/presentation/routes/routes.dart';
 
 void main() {
   runApp(KicksAdmin());
+  
 }
 
 class KicksAdmin extends StatelessWidget {
@@ -34,6 +35,7 @@ class KicksAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return ScreenUtilInit(
       designSize: const Size(411, 891),
       child: MultiBlocProvider(
@@ -52,7 +54,6 @@ class KicksAdmin extends StatelessWidget {
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            fontFamily: GoogleFonts.tektur().fontFamily,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),

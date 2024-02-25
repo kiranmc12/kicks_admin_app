@@ -32,8 +32,8 @@ class ImageShowContainer extends StatelessWidget {
                     width: double.infinity,
                     child: state.image != null
                         ? Image.file(state.image!.fileImage)
-                        : Center(
-                            child: const Column(
+                        : const Center(
+                            child: Column(
                             children: [Icon(Iconsax.image), Text('Add Image')],
                           ))),
               ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:icons_plus/icons_plus.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/users/users_bloc.dart';
 import 'package:kicks_sneakerapp/application/presentation/screens/all_users/widgets/user_tile_widget.dart';
 import 'package:kicks_sneakerapp/application/presentation/utils/colors.dart';

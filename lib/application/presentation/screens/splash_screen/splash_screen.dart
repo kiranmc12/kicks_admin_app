@@ -13,8 +13,9 @@ class ScreenSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    sizeFinder(context);
-    Timer(const Duration(seconds: 3), () {
+          
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<AuthBloc>().add(const AuthEvent.loggedIn());
     });
 
@@ -30,7 +31,7 @@ class ScreenSplash extends StatelessWidget {
         },
         child: Center(
           child: Text(
-            "Kicks",
+            "Kicks Admin",
             style: tektur(color: kWhite, fontSize: 0.08),
           ),
         ),

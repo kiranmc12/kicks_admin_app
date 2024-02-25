@@ -62,21 +62,21 @@ class ScreenOrderDetail extends StatelessWidget {
                         ),
                         const Divider(),
                         Text(
-                          'TOTAL AMOUNT : ₹ ${order.totalAmount}',
+                          'TOTAL AMOUNT : ₹ ${order.totalAmount!.round()}',
                           style:  tektur(fontWeight: FontWeight.w700),
                         ),
                         kHeight10,
-                        Text(
-                          order.paymentStatus!,
-                          style:  tektur(fontWeight: FontWeight.w700),
-                        ),
+                        // Text(
+                        //   order.paymentStatus!,
+                        //   style:  tektur(fontWeight: FontWeight.w700),
+                        // ),
                         Text(order.address ?? ''),
                         kHeight10,
                         Row(children: [
                           const Text('phone : '),
                           Text(
                             order.phone!,
-                            style:  tektur(fontWeight: FontWeight.w600),
+                            style:  tektur(fontWeight: FontWeight.w400),
                           ),
                         ]),
                         Row(children: [
@@ -108,7 +108,7 @@ class ScreenOrderDetail extends StatelessWidget {
                           const Text('Paymnet Status : '),
                           Text(
                             order.paymentStatus!,
-                            style: const TextStyle(color: kRed),
+                            style:  TextStyle(color:order.paymentStatus=="PAID"? kGreen:kRed),
                           ),
                         ]),
                         kHeight10,
