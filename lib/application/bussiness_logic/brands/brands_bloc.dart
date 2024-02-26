@@ -15,6 +15,8 @@ class BrandsBloc extends Bloc<BrandsEvent, BrandsState> {
   final TextEditingController brandController = TextEditingController();
   final GlobalKey<FormState> brandKey = GlobalKey<FormState>();
   final Map<String, int> brandMap = {};
+    final Map<int, String> couponMap = {};
+
 
   final BrandRepository brandApi;
   String? curentBrand;
@@ -35,6 +37,9 @@ class BrandsBloc extends Bloc<BrandsEvent, BrandsState> {
         if (getBrandsResponseModel.data != null) {
           for (var brand in getBrandsResponseModel.data!) {
             brandMap[brand.category!] = brand.id!;
+          }
+          for (var brand in getBrandsResponseModel.data!) {
+            couponMap[brand.id!] =brand.category!;
           }
         }
 

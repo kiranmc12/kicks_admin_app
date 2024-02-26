@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:kicks_sneakerapp/domain/core/error/Failure.dart';
+import 'package:kicks_sneakerapp/domain/core/error/failure.dart';
 import 'package:kicks_sneakerapp/domain/models/orders/get_all_orders_response_model/get_all_orders_response_model.dart';
 import 'package:kicks_sneakerapp/domain/models/orders/order_details_model/order_details_model.dart';
 import 'package:kicks_sneakerapp/domain/models/orders/update_order_status_model.dart/update_order_status_model.dart';

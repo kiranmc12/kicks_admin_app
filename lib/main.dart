@@ -55,6 +55,7 @@ class KicksAdmin extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            fontFamily: GoogleFonts.tektur().fontFamily,
             useMaterial3: true,
           ),
           initialRoute: Routes.initial,

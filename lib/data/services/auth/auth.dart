@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:kicks_sneakerapp/domain/core/api_endpoints/api_endpoints.dart';
-import 'package:kicks_sneakerapp/domain/core/error/Failure.dart';
+import 'package:kicks_sneakerapp/domain/core/error/failure.dart';
 import 'package:kicks_sneakerapp/domain/models/auth/login_model/login_model.dart';
 import 'package:kicks_sneakerapp/domain/models/auth/login_response/login_response.dart';
 import 'package:kicks_sneakerapp/domain/repositories/authentication_repository.dart';

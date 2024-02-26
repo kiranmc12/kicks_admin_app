@@ -30,7 +30,7 @@ class ScreenSignIn extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      "Kicks",
+                      "Kicks Admin",
                       style: TextStyle(fontSize: 30.0, color: kWhite),
                     ),
                     kHeight100,

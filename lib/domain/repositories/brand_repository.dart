@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:kicks_sneakerapp/domain/core/error/Failure.dart';
+import 'package:kicks_sneakerapp/domain/core/error/failure.dart';
 import 'package:kicks_sneakerapp/domain/models/brand/brand_response_model/brand_response_model.dart';
 import 'package:kicks_sneakerapp/domain/models/brand/delete_brand_model/delete_brand_model.dart';
 import 'package:kicks_sneakerapp/domain/models/brand/get_brand_model/get_brand_model.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kicks_sneakerapp/application/bussiness_logic/brands/brands_bloc.dart';
 
 import 'package:kicks_sneakerapp/application/bussiness_logic/coupons/coupons_bloc.dart';
 import 'package:kicks_sneakerapp/application/bussiness_logic/offers/offers_bloc.dart';
@@ -29,7 +30,7 @@ class OfferCouponCard extends StatelessWidget {
       name = coupon!.coupon!;
       amount = coupon!.discountRate!;
     } else {
-      name = 'Nike';
+      name = context.read<BrandsBloc>().couponMap[offer!.categoryId]!;
       amount = offer!.discountRate!;
     }
     return SizedBox(

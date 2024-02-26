@@ -10,7 +10,7 @@ class CouponsState with _$CouponsState {
       required bool showMessage,
       String? message,
       GetCouponResponseModel? getCouponResponseModel}) = _Initial;
-  factory CouponsState.initial() => CouponsState(
+  factory CouponsState.initial() => const CouponsState(
       isLoding: true,
       hasError: false,
       isAdding: false,

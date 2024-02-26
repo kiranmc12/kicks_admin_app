@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:kicks_sneakerapp/data/services/api_services.dart';
 import 'package:kicks_sneakerapp/domain/core/api_endpoints/api_endpoints.dart';
-import 'package:kicks_sneakerapp/domain/core/error/Failure.dart';
+import 'package:kicks_sneakerapp/domain/core/error/failure.dart';
 import 'package:kicks_sneakerapp/domain/models/sucess/sucess_model/sucess_model.dart';
 import 'package:kicks_sneakerapp/domain/models/users/block_unblock_user_query/block_unblock_user_query.dart';
 import 'package:kicks_sneakerapp/domain/models/users/get_users_query/get_users_query.dart';

@@ -1,6 +1,7 @@
 class ApiEndpoints {
   // static String baseUrl = 'http://10.0.2.2:3000';
   static String baseUrl = 'http://192.168.1.3:3000';
+  // static String baseUrl = "https://kicks.jerseyhubmadebyarunk.store";
 
   static String signIn = '/admin/adminlogin';
   static String refreshUrl = '/validate-token';

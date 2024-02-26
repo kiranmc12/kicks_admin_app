@@ -13,8 +13,6 @@ class ScreenSplash extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-          
-
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<AuthBloc>().add(const AuthEvent.loggedIn());
     });
@@ -23,11 +21,13 @@ class ScreenSplash extends StatelessWidget {
       backgroundColor: kBlack,
       body: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
-          if (state.isLoggedIn) {
-            Navigator.popAndPushNamed(context, Routes.bottomNav);
-          } else {
-            Navigator.popAndPushNamed(context, Routes.signInPage);
-          }
+          Timer(const Duration(seconds: 2), () {
+            if (state.isLoggedIn) {
+              Navigator.popAndPushNamed(context, Routes.bottomNav);
+            } else {
+              Navigator.popAndPushNamed(context, Routes.signInPage);
+            }
+          });
         },
         child: Center(
           child: Text(

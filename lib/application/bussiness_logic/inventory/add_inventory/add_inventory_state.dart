@@ -12,5 +12,5 @@ class AddInventoryState with _$AddInventoryState {
       int? brandId,
       AddInventoryResponseModel? addInventoryResponseModel}) = _Initial;
   factory AddInventoryState.initial() =>
-      AddInventoryState(hasError: false, isLoading: false, isAdded: false);
+      const AddInventoryState(hasError: false, isLoading: false, isAdded: false);
 }

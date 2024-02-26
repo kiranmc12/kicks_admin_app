@@ -21,6 +21,6 @@ String handleError(DioException error) {
     case DioExceptionType.cancel:
       return "Request canceled error";
     default:
-      return "Default error";
+      return "somethign went wrong error";
   }
 }
